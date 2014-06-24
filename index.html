@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="SmallUPBP : A (not too) small physically based renderer" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>SmallUPBP</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/PetrVevoda/smallupbp">View on GitHub</a>
+
+          <h1 id="project_title">SmallUPBP</h1>
+          <h2 id="project_tagline">A (not too) small physically based renderer</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/PetrVevoda/smallupbp/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/PetrVevoda/smallupbp/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h1>
+
+<p>SmallUPBP is a small physically based renderer that implements the unifying
+points, beams and paths algorithm described in the paper</p>
+
+<blockquote>
+<p><a href="http://cgg.mff.cuni.cz/%7Ejaroslav/papers/2014-upbp/index.htm">Unifying points, beams, and paths in volumetric light transport simulation</a>
+ Jaroslav Křivánek, Iliyan Georgiev, Toshiya Hachisuka, Petr Vévoda, Martin Šik,
+ Derek Nowrouzezahrai, and Wojciech Jarosz
+ ACM Transactions on Graphics 33(4) (SIGGRAPH 2014)
+ <img src="http://cgg.mff.cuni.cz/%7Ejaroslav/papers/2014-upbp/teaser/reference.jpg" alt="teaser"></p>
+</blockquote>
+
+<p>as well as a number of other algorithms, notably including progressive photon
+mapping, (progressive) bidirectional photon mapping, bidirectional path
+tracing, vertex connection and merging, beam radiance estimate, and photon 
+beams.</p>
+
+<p>The code compiles to a command line program that can render images of a
+number of predefined scenes using the provided algorithms as well as of
+custom scenes supplied by a user.</p>
+
+<p>It is based on <a href="http://www.smallvcm.com">SmallVCM renderer</a> developed in 2012 
+by Tomas Davidovic (<a href="https://github.com/tomas-davidovic" class="user-mention">@tomas-davidovic</a>) and Iliyan Georgiev
+(<a href="https://github.com/iliyang" class="user-mention">@iliyang</a>). SmallUPBP heavily modifies it to add support for
+participating media, beam-based volumetric estimators and user scenes. Its
+main authors are Petr Vevoda, Martin Sik (<a href="http://cgg.mff.cuni.cz/%7Esik/">http://cgg.mff.cuni.cz/~sik/</a>)
+and Jaroslav Krivanek (<a href="http://cgg.mff.cuni.cz/%7Ejaroslav/">http://cgg.mff.cuni.cz/~jaroslav/</a>).</p>
+
+<p>A third-party code is incorporated. Namely <a href="http://embree.github.io/">Embree</a>
+for ray tracing acceleration and <a href="http://www.openexr.com/">OpenEXR</a> for reading
+and writing OpenEXR images.</p>
+
+<p>SmallUPBP is released under the following license:</p>
+
+<ul>
+<li>
+<a href="http://en.wikipedia.origin/wiki/MIT_License">MIT license</a> - most of the supplied code, scenes and associated files</li>
+<li>
+<a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 license</a> - Embree</li>
+<li>
+<a href="http://www.openexr.com/license.html">modified BSD licence</a> - OpenEXR</li>
+</ul><p>This code was used to render the images in the aforementioned paper and all scenes
+and batch files necessary for reproducing the presented results are provided. 
+It is released for educational and research purposes and neither the code nor
+its documentation claims to be complete and bug-free. We apologize for any errors
+and confusion.</p>
+
+<p>If you have any questions or ideas for improvement, feel free to contact Jaroslav
+Krivanek <a href="mailto:jaroslav.krivanek@mff.cuni.cz">jaroslav.krivanek@mff.cuni.cz</a>, the primary maintainer of this project.</p>
+
+<h1>
+<a name="contents" class="anchor" href="#contents"><span class="octicon octicon-link"></span></a>Contents</h1>
+
+<p>The archive you have downloaded should contain following folders and files:</p>
+
+<ul>
+<li>embree-2.0 - source code of Embree</li>
+<li>OpenEXR    - header files and precompiled libraries of OpenEXR</li>
+<li>scenes     - scene and batch files used to render images in the UPBP paper</li>
+<li>SmallUPBP  - source code of this renderer</li>
+<li>Tools      - a few scripts for results display and comparison</li>
+<li>README.txt - this text</li>
+</ul><h1>
+<a name="compilation-and-run" class="anchor" href="#compilation-and-run"><span class="octicon octicon-link"></span></a>Compilation and run</h1>
+
+<p>The easiest way to compile SmallUPBP is to use the provided Visual Studio 2013
+solution SmallUPBP\SmallUPBP.sln (should work in Visual Studio 2010 or later). 
+Simply build it and you will recieve SmallUPBP.exe in Build\SmallUPBP\x64\Release
+(or Build\SmallUPBP\x64\Debug dependig on what configuration you have selected). 
+This file is completely independent on the others, you can move it and run 
+wherever you want (however, batch files in the scenes folder expect it here).</p>
+
+<p>To give you insight: the solution contains three projects - <em>embree</em>, <em>sys</em> and
+<em>SmallUPBP</em>. The first two are parts of Embree and need to be compiled as static
+libraries and linked along with OpenEXR\OpenEXR.lib with the main project <em>SmallUPBP</em>.
+We recommend to compile with C++11 support, but the program will work anyway, 
+although a worse random number generator will be used.</p>
+
+<p>As mentioned earlier, the resulting executable file is a command line program.
+Type <code>SmallUPBP.exe -h</code> or <code>SmallUPBP.exe -hf</code> to see a short and full help respectively.
+The short help contains only basic arguments sufficient to render your first images
+while the full version lists all arguments the program knows.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">SmallUPBP maintained by <a href="https://github.com/PetrVevoda">PetrVevoda</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
