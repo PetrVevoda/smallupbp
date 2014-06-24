@@ -34,7 +34,7 @@
         <h3>
 <a name="introduction" class="anchor" href="#introduction"><span class="octicon octicon-link"></span></a>Introduction</h3>
 
-<p>SmallUPBP is a small physically based renderer that implements the unifying
+<p>SmallUPBP is a small physically based renderer that implements the unified
 points, beams and paths algorithm described in the paper</p>
 
 <blockquote>
@@ -53,14 +53,14 @@ beams.</p>
 number of predefined scenes using the provided algorithms as well as of
 custom scenes supplied by a user.</p>
 
-<p>It is based on <a href="http://www.smallvcm.com">SmallVCM renderer</a> developed in 2012 
-by Tomas Davidovic (<a href="https://github.com/tomas-davidovic" class="user-mention">@tomas-davidovic</a>) and Iliyan Georgiev
+<p>It is based on the <a href="http://www.smallvcm.com">SmallVCM renderer</a> developed in 2012 
+by Tomáš Davidovič (<a href="https://github.com/tomas-davidovic" class="user-mention">@tomas-davidovic</a>) and Iliyan Georgiev
 (<a href="https://github.com/iliyang" class="user-mention">@iliyang</a>). SmallUPBP heavily modifies it to add support for
-participating media, beam-based volumetric estimators and user scenes. Its
-main authors are Petr Vevoda, Martin Sik (<a href="http://cgg.mff.cuni.cz/%7Esik/">http://cgg.mff.cuni.cz/~sik/</a>)
-and Jaroslav Krivanek (<a href="http://cgg.mff.cuni.cz/%7Ejaroslav/">http://cgg.mff.cuni.cz/~jaroslav/</a>).</p>
+participating media, point and beam-based volumetric estimators and loading scenes in OBJ. Its
+main authors are Petr Vévoda, Martin Šik (<a href="http://cgg.mff.cuni.cz/%7Esik/">http://cgg.mff.cuni.cz/~sik/</a>)
+and Jaroslav Křivánek (<a href="http://cgg.mff.cuni.cz/%7Ejaroslav/">http://cgg.mff.cuni.cz/~jaroslav/</a>).</p>
 
-<p>A third-party code is incorporated. Namely <a href="http://embree.github.io/">Embree</a>
+<p>Two third-party libraries are incorporated. Namely <a href="http://embree.github.io/">Embree</a>
 for ray tracing acceleration and <a href="http://www.openexr.com/">OpenEXR</a> for reading
 and writing OpenEXR images.</p>
 
@@ -74,41 +74,41 @@ and writing OpenEXR images.</p>
 <li>
 <a href="http://www.openexr.com/license.html">modified BSD licence</a> - OpenEXR</li>
 </ul><p>This code was used to render the images in the aforementioned paper and all scenes
-and batch files necessary for reproducing the presented results are provided. 
+and batch files necessary for reproducing the presented results are provided (see the <code>scenes</code> folder). 
 It is released for educational and research purposes and neither the code nor
 its documentation claims to be complete and bug-free. We apologize for any errors
 and confusion.</p>
 
-<p>If you have any questions or ideas for improvement, feel free to contact Jaroslav
-Krivanek (<a href="mailto:jaroslav.krivanek@mff.cuni.cz">jaroslav.krivanek@mff.cuni.cz</a>), the primary maintainer of this project.</p>
+<p>If you have any questions or ideas for improvement, feel free to contact Petr Vévoda (<a href="mailto:petrvevoda@seznam.cz">petrvevoda@seznam.cz</a>) or Jaroslav
+Křivánek (<a href="mailto:jaroslav.krivanek@mff.cuni.cz">jaroslav.krivanek@mff.cuni.cz</a>).</p>
 
 <h3>
 <a name="contents" class="anchor" href="#contents"><span class="octicon octicon-link"></span></a>Contents</h3>
 
-<p>The archive you have downloaded should contain following folders and files:</p>
+<p>The archive you have downloaded contains following folders and files:</p>
 
 <ul>
 <li>embree-2.0 - source code of Embree</li>
 <li>OpenEXR    - header files and precompiled libraries of OpenEXR</li>
 <li>scenes     - scene and batch files used to render images in the UPBP paper</li>
 <li>SmallUPBP  - source code of this renderer</li>
-<li>Tools      - a few scripts for results display and comparison</li>
+<li>Tools      - a few scripts for displaying and comparing rendered images</li>
 <li>README.txt - this text</li>
 </ul><h3>
 <a name="compilation-and-run" class="anchor" href="#compilation-and-run"><span class="octicon octicon-link"></span></a>Compilation and run</h3>
 
 <p>The easiest way to compile SmallUPBP is to use the provided Visual Studio 2013
 solution <code>SmallUPBP\SmallUPBP.sln</code> (should work in Visual Studio 2010 or later). 
-Simply build it and you will recieve <code>SmallUPBP.exe</code> in <code>Build\SmallUPBP\x64\Release</code>
+Simply build it and the <code>SmallUPBP.exe</code> file will be created in <code>Build\SmallUPBP\x64\Release</code>
 (or <code>Build\SmallUPBP\x64\Debug</code> dependig on what configuration you have selected). 
-This file is completely independent on the others, you can move it and run 
-wherever you want (however, batch files in the <code>scenes</code> folder expect it here).</p>
+This file is completely independent of any other files, you can move it and run 
+wherever you want (however, the batch files in the <code>scenes</code> folder expect it in the original location).</p>
 
-<p>To give you insight: the solution contains three projects - <em>embree</em>, <em>sys</em> and
+<p>To give you an idea: the solution contains three projects - <em>embree</em>, <em>sys</em> and
 <em>SmallUPBP</em>. The first two are parts of Embree and need to be compiled as static
 libraries and linked along with <code>OpenEXR\OpenEXR.lib</code> with the main project <em>SmallUPBP</em>.
-We recommend to compile with C++11 support, but the program will work anyway, 
-although a worse random number generator will be used.</p>
+We recommend to compile with C++11 support, but the program will work even without it, 
+though a worse random number generator will be used.</p>
 
 <p>As mentioned earlier, the resulting executable file is a command line program.
 Type <code>SmallUPBP.exe -h</code> or <code>SmallUPBP.exe -hf</code> to see a short and full help respectively.
