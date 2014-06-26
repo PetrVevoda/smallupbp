@@ -1,0 +1,194 @@
+newmtl Medium5
+Kd 0 0 0
+Ns 18.5613
+
+newmtl Medium4
+Kd 0 0 0
+Ns 18.5613
+
+newmtl Medium3
+Kd 0 0 0
+Ns 18.5613
+
+newmtl Medium2
+Kd 0 0 0
+Ns 18.5613
+
+newmtl Medium1
+Kd 0 0 0
+Ns 18.5613
+
+newmtl Porcelenewhite
+Kd 0.470588 0.470588 0.470588
+Ks 0.407843 0.407843 0.407843
+Ns 518.069
+Ni 1.6
+
+newmtl ToiletPaper
+Kd 1 1 1
+Ni 1.6
+
+newmtl Material#25
+Kd 0.960785 0.960784 0.960785
+Ks 0.017647 0.017647 0.017647
+Ns 518.069
+Ni 1.6
+
+newmtl M05-Default888
+Kd 0.984314 0.717647 0.82353
+Ni 1.6
+
+newmtl Light
+Kd 0 0 0
+Ke 700 700 700
+Ni 1.52
+
+newmtl GlassLight
+Kd 0 0 0
+Ni 1.4
+
+newmtl Fugi
+Kd 0.901961 0.901961 0.901961
+Ni 1.52
+
+newmtl Tiles_03
+Kd 0.913726 0.913726 0.913726
+Ni 1.52
+
+newmtl Tiles_001
+Kd 0.333333 0.27451 0.623529
+Ks 0.27451 0.27451 0.27451
+Ns 51.5666
+Ni 1.6
+
+newmtl Mirror
+Kd 0 0 0
+Ni 1.6
+
+newmtl Glass_01_Shelves
+Kd 0 0 0
+Ni 1.5
+
+newmtl Sink_Glass
+Kd 0.494118 0.482353 0.482353
+Ks 0.458824 0.458824 0.458824
+Ns 215.115
+Ni 1.5
+
+newmtl Sink_INside
+Kd 0.0509804 0.0235294 0
+Ns 14.9155
+Ni 2
+
+newmtl WhitePlastic_01
+Kd 0.470588 0.450981 0.488236
+Ks 0.447059 0.447059 0.447059
+Ns 1427.02
+Ni 1.6
+
+newmtl Flaska1
+Kd 0 0 0
+Ns 18.5613
+
+newmtl M19-Default
+Kd 0.745098 0.670588 0.768628
+Ks 0.145098 0.145098 0.145098
+Ns 19758.2
+Ni 1.6
+
+newmtl BluePlastic
+Kd 0.725491 0.752941 0.752941
+Ks 0.0862745 0.0862745 0.0862745
+Ns 2.02139
+Ni 1.6
+
+newmtl Flaska4
+Kd 0 0 0
+Ns 18.5613
+
+newmtl Medium6
+Kd 0 0 0
+Ns 18.5613
+
+newmtl Flaska6
+Kd 0 0 0
+Ns 18.5613
+
+newmtl Material#2097630073
+Kd 0.925491 0.92549 0.92549
+Ni 1.6
+map_Kd Map#78.png
+
+newmtl silver
+Kd 0 0 0
+Ni 1.6
+
+newmtl OkoloKamery
+Kd 0 0 0
+Ns 18.5613
+
+newmtl Towel
+Kd 0.752941 0.576471 0.388235
+Ni 1.6
+
+newmtl Flaska3
+Kd 0 0 0
+Ns 18.5613
+
+newmtl Flaska2
+Kd 0 0 0
+Ns 18.5613
+
+newmtl Flaska5
+Kd 0 0 0
+Ns 18.5613
+
+newmtl TransperentPlastic_02
+Kd 0 0 0
+Ni 1.6
+
+newmtl SoapHolder
+Kd 0.760785 0.74902 0.705882
+Ks 0.0784314 0.0784314 0.0784314
+Ns 2.02139
+Ni 1.6
+
+newmtl Soap
+Kd 0.811765 0.380392 0.462745
+Ns 1.10205
+Ni 1.6
+
+newmtl M20-Default
+Kd 0.894118 0.894118 0.894118
+Ks 0.07451 0.07451 0.07451
+Ns 130.063
+Ni 1.6
+
+newmtl Tles_02
+Kd 0.352 0.237 0.427
+Ks 0.525 0.46667 0.56
+Ns 9.7748
+Ni 1.6
+
+newmtl chrome08210
+Ks 0.690196 0.690196 0.690196
+Ni 1.6
+map_Ks Map#1.png
+
+newmtl chrome08210-0
+Kd 0.00392157 0.00392157 0.00392157
+Ks 0.690196 0.690196 0.690196
+Ni 1.6
+map_Ks Map#1-0.png
+
+newmtl Chrome_01
+Kd 0.00784314 0.00784314 0.00784314
+Ks 0.909804 0.909804 0.909804
+Ns 3986.37
+Ni 10
+
+newmtl Material#29
+Kd 0.70 0.7 0.7
+Ks 0.252941 0.252941 0.252941
+Ns 5.09365
+Ni 2.705

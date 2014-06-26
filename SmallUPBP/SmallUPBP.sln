@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmallUPBP", "SmallUPBP.vcxproj", "{50BA09E6-1299-41FF-B89E-234A6A9EB55B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B118AB3D-AB5B-4D86-90C2-8E91E8457710} = {B118AB3D-AB5B-4D86-90C2-8E91E8457710}
+		{ED858C9A-C161-4036-8DF7-EB169BCB81BC} = {ED858C9A-C161-4036-8DF7-EB169BCB81BC}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "embree", "..\embree-2.0\embree\embree.vcxproj", "{ED858C9A-C161-4036-8DF7-EB169BCB81BC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sys", "..\embree-2.0\embree\sys\sys.vcxproj", "{B118AB3D-AB5B-4D86-90C2-8E91E8457710}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50BA09E6-1299-41FF-B89E-234A6A9EB55B}.Debug|x64.ActiveCfg = Debug|x64
+		{50BA09E6-1299-41FF-B89E-234A6A9EB55B}.Debug|x64.Build.0 = Debug|x64
+		{50BA09E6-1299-41FF-B89E-234A6A9EB55B}.Release|x64.ActiveCfg = Release|x64
+		{50BA09E6-1299-41FF-B89E-234A6A9EB55B}.Release|x64.Build.0 = Release|x64
+		{ED858C9A-C161-4036-8DF7-EB169BCB81BC}.Debug|x64.ActiveCfg = Debug|x64
+		{ED858C9A-C161-4036-8DF7-EB169BCB81BC}.Debug|x64.Build.0 = Debug|x64
+		{ED858C9A-C161-4036-8DF7-EB169BCB81BC}.Release|x64.ActiveCfg = Release|x64
+		{ED858C9A-C161-4036-8DF7-EB169BCB81BC}.Release|x64.Build.0 = Release|x64
+		{B118AB3D-AB5B-4D86-90C2-8E91E8457710}.Debug|x64.ActiveCfg = Debug|x64
+		{B118AB3D-AB5B-4D86-90C2-8E91E8457710}.Debug|x64.Build.0 = Debug|x64
+		{B118AB3D-AB5B-4D86-90C2-8E91E8457710}.Release|x64.ActiveCfg = Release|x64
+		{B118AB3D-AB5B-4D86-90C2-8E91E8457710}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

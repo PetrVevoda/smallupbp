@@ -1,0 +1,36 @@
+#CAMERA
+
+TM_ROW0 -0.0000	-1.0000	0.0000
+TM_ROW1 0.5000	-0.0000	0.8660
+TM_ROW2 -0.8660	0.0000	0.5000
+TM_ROW3 -84.8188 22.9605 31.0322
+CAMERA_FOV 0.7854
+CAMERA_TDIST 160.0000
+
+
+#MEDIA
+
+medium M_svicka
+absorption 0.0 0.0 0.0
+emission 0.0 0.0 0.0
+scattering 2.0 2.0 2.0
+g 0.0
+
+
+#MATERIALS
+
+material svicka
+mirror 0.00 0.00 0.00
+ior 1.0
+mediumId M_svicka
+priority 1
+
+material Svetlo
+Ke 100 100 100
+mirror 1.0 1.0 1.0
+ior 1.0
+
+material Pozadi
+Ka 0 0 0
+Kd 1 1 1
+Ks 0 0 0

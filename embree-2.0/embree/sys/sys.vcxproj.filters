@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="stl">
+      <UniqueIdentifier>{f47f07fe-8e34-4b8b-b953-fbbd3a3de17c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sync">
+      <UniqueIdentifier>{58091567-baaf-4378-ab86-c37d9069195b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stl\stream.h">
+      <Filter>stl</Filter>
+    </ClInclude>
+    <ClInclude Include="stl\string.h">
+      <Filter>stl</Filter>
+    </ClInclude>
+    <ClInclude Include="sync\atomic.h">
+      <Filter>sync</Filter>
+    </ClInclude>
+    <ClInclude Include="sync\barrier.h">
+      <Filter>sync</Filter>
+    </ClInclude>
+    <ClInclude Include="sync\condition.h">
+      <Filter>sync</Filter>
+    </ClInclude>
+    <ClInclude Include="sync\mutex.h">
+      <Filter>sync</Filter>
+    </ClInclude>
+    <ClInclude Include="array2d.h" />
+    <ClInclude Include="constants.h" />
+    <ClInclude Include="debug.h" />
+    <ClInclude Include="filename.h" />
+    <ClInclude Include="intrinsics.h" />
+    <ClInclude Include="library.h" />
+    <ClInclude Include="network.h" />
+    <ClInclude Include="platform.h" />
+    <ClInclude Include="pmc.h" />
+    <ClInclude Include="ref.h" />
+    <ClInclude Include="sysinfo.h" />
+    <ClInclude Include="taskscheduler.h" />
+    <ClInclude Include="taskscheduler_mic.h" />
+    <ClInclude Include="taskscheduler_sys.h" />
+    <ClInclude Include="thread.h" />
+    <ClInclude Include="timer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stl\string.cpp">
+      <Filter>stl</Filter>
+    </ClCompile>
+    <ClCompile Include="sync\condition.cpp">
+      <Filter>sync</Filter>
+    </ClCompile>
+    <ClCompile Include="sync\mutex.cpp">
+      <Filter>sync</Filter>
+    </ClCompile>
+    <ClCompile Include="filename.cpp" />
+    <ClCompile Include="library.cpp" />
+    <ClCompile Include="network.cpp" />
+    <ClCompile Include="platform.cpp" />
+    <ClCompile Include="sysinfo.cpp" />
+    <ClCompile Include="taskscheduler.cpp" />
+    <ClCompile Include="taskscheduler_mic.cpp" />
+    <ClCompile Include="taskscheduler_sys.cpp" />
+    <ClCompile Include="thread.cpp" />
+  </ItemGroup>
+</Project>

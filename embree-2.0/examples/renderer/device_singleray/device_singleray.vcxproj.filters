@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="brdfs">
+      <UniqueIdentifier>{1a6df7f1-e0fb-4756-b1c3-6677bacfa43d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="brdfs\microfacet">
+      <UniqueIdentifier>{360145c9-3dcd-496a-92d8-48c76b9da90c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="api">
+      <UniqueIdentifier>{0a499a4f-9d3f-4497-899b-6f54dced47a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cameras">
+      <UniqueIdentifier>{cfa44e00-b712-40c5-ae0d-62295238036a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="filters">
+      <UniqueIdentifier>{e6a633d7-be3e-4cbe-aee3-01b1580628bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="integrators">
+      <UniqueIdentifier>{ae8eb74a-7844-4edf-a856-bc6e6fe085c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lights">
+      <UniqueIdentifier>{8d3c8976-a7f2-4f7b-bbda-64ad1a7d2956}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="materials">
+      <UniqueIdentifier>{6ecfffc9-9503-40c9-ba91-23cbe537527a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="renderers">
+      <UniqueIdentifier>{a0013b16-911b-4340-8f94-e69dc5577c1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="samplers">
+      <UniqueIdentifier>{2d974c8d-2c09-45d0-8637-66ce4a4220f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shapes">
+      <UniqueIdentifier>{edb98614-ce36-44ee-9a0b-276c5d7804df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="textures">
+      <UniqueIdentifier>{a41e25be-4557-47bd-b224-61dfa110ac09}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="brdfs\brdf.h">
+      <Filter>brdfs</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\compositedbrdf.h">
+      <Filter>brdfs</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\conductor.h">
+      <Filter>brdfs</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\dielectric.h">
+      <Filter>brdfs</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\dielectriclayer.h">
+      <Filter>brdfs</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\lambertian.h">
+      <Filter>brdfs</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\microfacet.h">
+      <Filter>brdfs</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\minnaert.h">
+      <Filter>brdfs</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\optics.h">
+      <Filter>brdfs</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\reflection.h">
+      <Filter>brdfs</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\specular.h">
+      <Filter>brdfs</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\transmission.h">
+      <Filter>brdfs</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\velvety.h">
+      <Filter>brdfs</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\microfacet\anisotropic_beckmann_distribution.h">
+      <Filter>brdfs\microfacet</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\microfacet\anisotropic_power_cosine_distribution.h">
+      <Filter>brdfs\microfacet</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\microfacet\beckmann_distribution.h">
+      <Filter>brdfs\microfacet</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\microfacet\fresnel.h">
+      <Filter>brdfs\microfacet</Filter>
+    </ClInclude>
+    <ClInclude Include="brdfs\microfacet\power_cosine_distribution.h">
+      <Filter>brdfs\microfacet</Filter>
+    </ClInclude>
+    <ClInclude Include="api\data.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="api\datastream.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="api\framebuffer.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="api\handle.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="api\instance.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="api\parms.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="api\scene.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="api\scene_flat.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="api\scene_instancing.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="api\singleray_device.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="api\swapchain.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="api\variant.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="cameras\camera.h">
+      <Filter>cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="cameras\depthoffieldcamera.h">
+      <Filter>cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="cameras\pinholecamera.h">
+      <Filter>cameras</Filter>
+    </ClInclude>
+    <ClInclude Include="filters\boxfilter.h">
+      <Filter>filters</Filter>
+    </ClInclude>
+    <ClInclude Include="filters\bsplinefilter.h">
+      <Filter>filters</Filter>
+    </ClInclude>
+    <ClInclude Include="filters\filter.h">
+      <Filter>filters</Filter>
+    </ClInclude>
+    <ClInclude Include="integrators\integrator.h">
+      <Filter>integrators</Filter>
+    </ClInclude>
+    <ClInclude Include="integrators\pathtraceintegrator.h">
+      <Filter>integrators</Filter>
+    </ClInclude>
+    <ClInclude Include="lights\ambientlight.h">
+      <Filter>lights</Filter>
+    </ClInclude>
+    <ClInclude Include="lights\directionallight.h">
+      <Filter>lights</Filter>
+    </ClInclude>
+    <ClInclude Include="lights\distantlight.h">
+      <Filter>lights</Filter>
+    </ClInclude>
+    <ClInclude Include="lights\hdrilight.h">
+      <Filter>lights</Filter>
+    </ClInclude>
+    <ClInclude Include="lights\light.h">
+      <Filter>lights</Filter>
+    </ClInclude>
+    <ClInclude Include="lights\pointlight.h">
+      <Filter>lights</Filter>
+    </ClInclude>
+    <ClInclude Include="lights\spotlight.h">
+      <Filter>lights</Filter>
+    </ClInclude>
+    <ClInclude Include="lights\trianglelight.h">
+      <Filter>lights</Filter>
+    </ClInclude>
+    <ClInclude Include="materials\brushedmetal.h">
+      <Filter>materials</Filter>
+    </ClInclude>
+    <ClInclude Include="materials\cotton.h">
+      <Filter>materials</Filter>
+    </ClInclude>
+    <ClInclude Include="materials\dielectric.h">
+      <Filter>materials</Filter>
+    </ClInclude>
+    <ClInclude Include="materials\material.h">
+      <Filter>materials</Filter>
+    </ClInclude>
+    <ClInclude Include="materials\matte.h">
+      <Filter>materials</Filter>
+    </ClInclude>
+    <ClInclude Include="materials\matte_textured.h">
+      <Filter>materials</Filter>
+    </ClInclude>
+    <ClInclude Include="materials\medium.h">
+      <Filter>materials</Filter>
+    </ClInclude>
+    <ClInclude Include="materials\metal.h">
+      <Filter>materials</Filter>
+    </ClInclude>
+    <ClInclude Include="materials\metallicpaint.h">
+      <Filter>materials</Filter>
+    </ClInclude>
+    <ClInclude Include="materials\mirror.h">
+      <Filter>materials</Filter>
+    </ClInclude>
+    <ClInclude Include="materials\obj.h">
+      <Filter>materials</Filter>
+    </ClInclude>
+    <ClInclude Include="materials\plastic.h">
+      <Filter>materials</Filter>
+    </ClInclude>
+    <ClInclude Include="materials\satin.h">
+      <Filter>materials</Filter>
+    </ClInclude>
+    <ClInclude Include="materials\thindielectric.h">
+      <Filter>materials</Filter>
+    </ClInclude>
+    <ClInclude Include="materials\velvet.h">
+      <Filter>materials</Filter>
+    </ClInclude>
+    <ClInclude Include="renderers\debugrenderer.h">
+      <Filter>renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="renderers\integratorrenderer.h">
+      <Filter>renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="renderers\progress.h">
+      <Filter>renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="renderers\renderer.h">
+      <Filter>renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="samplers\distribution1d.h">
+      <Filter>samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="samplers\distribution2d.h">
+      <Filter>samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="samplers\patterns.h">
+      <Filter>samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="samplers\sample.h">
+      <Filter>samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="samplers\sampler.h">
+      <Filter>samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="samplers\shapesampler.h">
+      <Filter>samplers</Filter>
+    </ClInclude>
+    <ClInclude Include="shapes\differentialgeometry.h">
+      <Filter>shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="shapes\disk.h">
+      <Filter>shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="shapes\shape.h">
+      <Filter>shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="shapes\sphere.h">
+      <Filter>shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="shapes\triangle.h">
+      <Filter>shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="shapes\trianglemesh.h">
+      <Filter>shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="shapes\trianglemesh_full.h">
+      <Filter>shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="shapes\trianglemesh_normals.h">
+      <Filter>shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="textures\nearestneighbor.h">
+      <Filter>textures</Filter>
+    </ClInclude>
+    <ClInclude Include="textures\texture.h">
+      <Filter>textures</Filter>
+    </ClInclude>
+    <ClInclude Include="default.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="api\singleray_device.cpp">
+      <Filter>api</Filter>
+    </ClCompile>
+    <ClCompile Include="filters\filter.cpp">
+      <Filter>filters</Filter>
+    </ClCompile>
+    <ClCompile Include="integrators\pathtraceintegrator.cpp">
+      <Filter>integrators</Filter>
+    </ClCompile>
+    <ClCompile Include="lights\hdrilight.cpp">
+      <Filter>lights</Filter>
+    </ClCompile>
+    <ClCompile Include="renderers\debugrenderer.cpp">
+      <Filter>renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="renderers\integratorrenderer.cpp">
+      <Filter>renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="renderers\progress.cpp">
+      <Filter>renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="samplers\distribution1d.cpp">
+      <Filter>samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="samplers\distribution2d.cpp">
+      <Filter>samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="samplers\sampler.cpp">
+      <Filter>samplers</Filter>
+    </ClCompile>
+    <ClCompile Include="shapes\trianglemesh_full.cpp">
+      <Filter>shapes</Filter>
+    </ClCompile>
+    <ClCompile Include="shapes\trianglemesh_normals.cpp">
+      <Filter>shapes</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

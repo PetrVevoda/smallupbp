@@ -1,0 +1,56 @@
+newmtl houbaDole
+Kd 0 0 0
+Ns 6.39832
+
+newmtl skloVino
+Kd 0 0 0
+Ns 18.5613
+
+newmtl mediumVino
+Kd 0 0 0
+Ns 18.5613
+
+newmtl Pozadi2
+Kd 0.2627 0.2627 0.2627
+Ns 18.5613
+
+newmtl Pozadi
+Kd 0.2627 0.2627 0.2627
+Ns 18.5613
+
+newmtl houbaNahore
+Kd 0 0 0
+Ni 1.52
+
+newmtl skloValec
+Kd 0 0 0
+Ns 18.5613
+
+newmtl skloDzban
+Kd 0 0 0
+Ns 18.5613
+
+newmtl mediumDzban
+Kd 0 0 0
+Ns 18.5613
+
+newmtl mediumSklenice
+Kd 0 0 0
+Ns 18.5613
+
+newmtl svicka
+Kd 0 0 0
+Ns 2.02139
+Ni 1.52
+
+newmtl knot
+Kd 0.129412 0.101961 0.0745098
+Ns 18.5613
+
+newmtl Svetlo2
+Kd 0 0 0
+Ns 18.5613
+
+newmtl Svetlo
+Kd 0 0 0
+Ns 18.5613

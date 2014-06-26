@@ -1,0 +1,221 @@
+#CAMERA
+
+TM_ROW0 0.6291	0.7773	0.0091
+TM_ROW1 -0.0088	-0.0046	1.0000
+TM_ROW2 0.7773	-0.6292	0.0040
+TM_ROW3 105.5772	-163.5308	151.8657
+CAMERA_FOV 0.6981
+CAMERA_TDIST 1.0000   
+
+
+#MEDIA
+
+#scattering once per 250 units out of 250 units
+medium Global
+absorption 0.0001 0.0001 0.0001
+emission 0.0 0.0 0.0
+scattering 0.0016 0.0016 0.0016
+g 0.4
+
+medium M_Flaska1
+absorption 0.0 0.0 0.0
+emission 0.0 0.0 0.0
+scattering 0.0 0.0 0.0
+g 0.0
+
+#olive oil
+medium M_Medium1
+absorption 0.0362 0.0047 0.0353
+emission 0.0 0.0 0.0
+scattering 0.0111 0.0259 0.0102
+g 0.0
+
+medium M_Flaska2
+absorption 0.0 0.0 0.0
+emission 0.0 0.0 0.0
+scattering 0.0 0.0 0.0
+g 0.0
+
+#shampoo
+medium M_Medium2
+absorption 0.78 0.428 0.739 
+emission 0.0 0.0 0.0
+scattering 0.22111 0.219919 0.20575
+g -0.7
+
+medium M_Flaska3
+absorption 0.0 0.0 0.0
+emission 0.0 0.0 0.0
+scattering 0.0 0.0 0.0
+g 0.0
+
+medium M_Medium3
+absorption 0.0104 0.1914 0.0147
+emission 0.0 0.0 0.0
+scattering 0.0288 0.0710 0.0952
+g 0.0
+
+medium M_Flaska4
+absorption 0.0 0.0 0.0
+emission 0.0 0.0 0.0
+scattering 0.0 0.0 0.0
+g 0.0
+
+medium M_Medium4
+absorption 0.05 0.05 0.01
+emission 0.0 0.0 0.0
+scattering 0.4625 0.4657 0.4657
+g -0.3
+
+medium M_Flaska5
+absorption 0.0 0.0 0.0
+emission 0.0 0.0 0.0
+scattering 0.0 0.0 0.0
+g 0.0
+
+medium M_Medium5
+absorption 0.00083 0.20048 0.2111
+emission 0.0 0.0 0.0
+scattering 0.0610 0.0312 0.0121
+g 0.6
+
+medium M_Flaska6
+absorption 0.0 0.0 0.0
+emission 0.0 0.0 0.0
+scattering 0.0 0.0 0.0
+g 0.0
+
+medium M_Medium6
+absorption 0.0162 0.0147 0.1453
+emission 0.0 0.0 0.0
+scattering 0.041 0.039 0.012
+g 0.9
+
+medium Sink
+absorption 0.0125 0.0125 0.0125
+emission 0.0 0.0 0.0
+scattering 1.052 1.052 1.052
+g 0.0
+
+
+#MATERIALS
+
+material TransperentPlastic_02
+mirror 1.0 1.0 1.0
+ior 1.4
+
+material chrome08210
+mirror 0.309804 0.309804 0.309804
+
+material chrome08210-0
+mirror 0.309804 0.309804 0.309804
+
+material Chrome_01
+mirror 0.309804 0.309804 0.309804
+
+material silver
+mirror 1.0 1.0 1.0
+
+material GlassLight
+mirror 1.0 1.0 1.0
+ior 1.520
+
+material Mirror
+mirror 1.0 1.0 1.0
+
+material Glass_01_Shelves
+mirror 0.909804 0.909804 0.909804
+ior 1.520
+
+material Flaska1
+mirror 1.0 1.0 1.0
+priority 5
+mediumId M_Flaska1
+ior 1.520
+
+material Medium1
+mirror 1.0 1.0 1.0
+priority 1
+mediumId M_Medium1
+ior 1.333
+
+material Flaska2
+mirror 1.0 1.0 1.0
+priority 5
+mediumId M_Flaska2
+ior 1.520
+
+material Medium2
+mirror 1.0 1.0 1.0
+priority 1
+mediumId M_Medium2
+ior 1.333
+
+material Flaska3
+mirror 1.0 1.0 1.0
+priority 5
+mediumId M_Flaska3
+ior 1.520
+
+material Medium3
+mirror 1.0 1.0 1.0
+priority 1
+mediumId M_Medium3
+ior 1.333
+
+material Flaska4
+mirror 1.0 1.0 1.0
+priority 5
+mediumId M_Flaska4
+ior 1.520
+
+material Medium4
+mirror 0.6 0.6 0.0
+priority 1
+mediumId M_Medium4
+ior 1.333
+
+material Flaska5
+mirror 1.0 1.0 1.0
+priority 5
+mediumId M_Flaska5
+ior 1.520
+
+material Medium5
+mirror 1.0 1.0 1.0
+priority 1
+mediumId M_Medium5
+ior 1.333
+
+material Flaska6
+mirror 1.0 1.0 1.0
+priority 5
+mediumId M_Flaska6
+ior 1.520
+
+material Medium6
+mirror 1.0 1.0 1.0
+priority 1
+mediumId M_Medium6
+ior 1.333
+
+material OkoloKamery
+priority 0
+mediumId Global
+geometryType imaginary
+ior 1.0
+
+material Sink_Glass
+priority 1
+mirror 0.0 0.0 0.0
+mediumId Sink
+ior 1.4
+
+material Sink_INside
+priority 1
+mirror 0.0 0.0 0.0
+mediumId Sink
+ior 1.4
+
+material Light
+enclosingMatId OkoloKamery

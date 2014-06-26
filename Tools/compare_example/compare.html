@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">   
+    <head>      
+        <title>Pyramid template</title>      
+        <meta http-equiv="content-Type" content="text/html; charset=utf-8" />      
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />      
+          
+    </head>   
+    <body>
+  
+		
+        <script>
+                  
+         // CHANGE THESE IF NECCESSARY 
+          var resX = 250;
+          var resY = 250;
+          var marginX = 10;
+          var marginY = 30;
+          
+          
+        // CODE
+        function show_image(src, width, height, alt, posX, posY) {
+            var img = document.createElement("img");
+            img.src = src;
+            img.width = width;
+            img.height = height;
+            img.alt = alt;
+            img.style.position="absolute";
+            img.style.top=posY + "px";
+            img.style.left=posX +"px";
+        
+            // This next line will just add it to the <body> tag
+            document.body.appendChild(img);
+        }
+         
+         function display_text(text, posX, posY) {
+            var div = document.createElement("div");
+            div.style.position="absolute";
+            div.style.top=posY + "px";
+            div.style.left=posX +"px";
+            div.innerHTML=text;
+            // This next line will just add it to the <body> tag
+            document.body.appendChild(div);
+        }
+        
+               
+        function drawLine(Ax,Ay,Bx,By)
+        {
+          bla = ""
+            var lineLength = Math.sqrt( (Ax-Bx)*(Ax-Bx)+(Ay-By)*(Ay-By) );
+            if (Math.abs( Ax-Bx) > Math.abs(Ay-By))
+            {
+                bla += "<div style='position:absolute;left:"+ Ax +"px;top:"+ Ay +"px;width:" + (Bx - Ax)+"px;height:5px;background:red;'></div>";
+            }
+            else
+            {
+                bla += "<div style='position:absolute;left:"+ Ax +"px;top:"+ Ay +"px;width:5px;height:" + (By - Ay)+"px;background:red;'></div>";
+            }
+          document.body.innerHTML += bla
+        }
+        function displaySubsetOfTransport(moveY)
+        {
+              display_text("<h1>Subset of transport</h1>",marginX+ resX,moveY);
+              display_text("<h3>Previous work</h3>",marginX+50 + resX / 2,moveY + 50);
+              display_text("<h3>Compatible</h3>",marginX+50 + marginX + resX + resX/2,moveY + 50);
+              var technique_names = ["PP3D","PB2D","BB1D","BPT"];
+              for ( var i = 0; i < technique_names.length; ++i)
+              {
+                display_text("<h4>" + technique_names[i] + "</h4>",marginX,moveY + 50 + resY / 2 + marginY+ (resY + marginY) * i);
+                if (i != 3)
+                  show_image("previous_" + technique_names[i] + ".png", resX,resY,"Previous - "+ technique_names[i], marginX + 100, moveY + 100 + marginY + (resY + marginY) * i);
+                show_image("compatible_" + technique_names[i] + ".png", resX,resY,"Compatible - "+ technique_names[i], marginX + 100 + resX + marginX, moveY + 100 + marginY+ (resY + marginY) * i);
+              }
+              display_text("<h4>ALL</h4>",marginX,moveY + 50 + resY / 2 + marginY+ (resY + marginY) * technique_names.length);
+              show_image("compatible_all.png", resX,resY,"Compatible - ALL", marginX + 100 + resX + marginX, moveY + 100 + marginY+ (resY + marginY) * technique_names.length);
+              // COMPOSITE  BOX
+              drawLine(marginX + 100 + resX + marginX-5, moveY -5 + 100 + marginY+ (resY + marginY) * technique_names.length, marginX + 100 + ( technique_names.length + 4 ) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * technique_names.length );
+              drawLine(marginX + 100 + resX + marginX-5  + ( 2) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * (technique_names.length+2), marginX + 100 + ( technique_names.length + 4 ) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * (technique_names.length+2) );
+              drawLine(marginX + 100 + resX + marginX-5, moveY -5 + 100 + marginY+ (resY + marginY) * (technique_names.length+1), marginX + 100 + resX + marginX-5+ ( 2) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * (technique_names.length+1) );
+              drawLine(marginX + 100 + resX + marginX-5  + ( 2) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * (technique_names.length+1), marginX + 100 + resX + marginX-5+ ( 2) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * (technique_names.length+2) );
+              drawLine(marginX + 100 + resX + marginX-5, moveY -5 + 100 + marginY+ (resY + marginY) * technique_names.length, marginX + 100 + resX + marginX-5, moveY -5 + 100 + marginY+ (resY + marginY) * (technique_names.length+1) );
+              drawLine(marginX + 100 + ( technique_names.length + 4 ) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * technique_names.length, marginX + 100 + ( technique_names.length + 4 ) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * (technique_names.length+2) );
+              // COMPOSITE PICTURES
+              display_text("<h4>COMPOSITED FROM:</h4>",marginX + 100 + resX + marginX + resX + marginX,moveY + 50 + resY / 2 + marginY+ (resY + marginY) * technique_names.length);
+              display_text("<h4>WEIGHTED</h4>",marginX + 100 + ( technique_names.length + 3 ) * (resX + marginX),moveY + 50 + resY / 2 + marginY+ (resY + marginY) * technique_names.length);
+              display_text("<h4>UNWEIGHTED</h4>",marginX + 100 + ( technique_names.length + 3 ) * (resX + marginX),moveY + 50 + resY / 2 + marginY+ (resY + marginY) * ( technique_names.length + 1));
+              for ( var i = 0; i < technique_names.length; ++i)
+              {
+                display_text("<h4>" + technique_names[i] + "</h4>",marginX + 100 + ( i + 3 ) * (resX + marginX) + resX/2 - 25,moveY + 50 + (resY + marginY) * technique_names.length);
+                show_image("compatible_all_" + technique_names[i] + "_weighted.png", resX,resY,"Compatible - "+ technique_names[i] + " - WEIGHTED", marginX + 100 + resX + marginX + ( i + 2 ) * (resX + marginX), moveY + 100 + marginY+ (resY + marginY) * technique_names.length);
+                show_image("compatible_all_" + technique_names[i] + "_unweighted.png", resX,resY,"Compatible - "+ technique_names[i] + " - UNWEIGHTED", marginX + 100 + resX + marginX + ( i + 2 ) * (resX + marginX), moveY + 100 + marginY+ (resY + marginY) * ( technique_names.length + 1 ));
+              }
+        }
+        
+        function displayComplete(moveY)
+        {
+              display_text("<h1>Complete transport comparison</h1>",marginX+ resX,moveY);
+              var technique_names = ["BPT","OUR","BEAMS","BRE"];
+              for ( var i = 0; i < technique_names.length; ++i)
+              {
+                display_text("<h4>" + technique_names[i] + "</h4>",marginX,moveY + 50 + resY / 2 + marginY+ (resY + marginY) * i);
+                show_image("complete_" + technique_names[i] + ".png", resX,resY,"Previous - "+ technique_names[i], marginX + 100, moveY + 100 + marginY + (resY + marginY) * i);
+              }
+              // COMPOSITE  BOX
+              technique_names = ["PP3D","PB2D","BB1D","BPT","SPM"];
+              drawLine(marginX + 100-5, moveY -5 + 100 + marginY+ (resY + marginY) * 1, marginX + 100 + ( technique_names.length + 3 ) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * 1 );
+              drawLine(marginX + 100-5  + ( 2) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * (1+2), marginX + 100 + ( technique_names.length + 3 ) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * (1+2) );
+              drawLine(marginX + 100-5, moveY -5 + 100 + marginY+ (resY + marginY) * (1+1), marginX + 100 -5+ ( 2) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * (1+1) );
+              drawLine(marginX + 100-5  + ( 2) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * (1+1), marginX + 100-5+ ( 2) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * (1+2) );
+              drawLine(marginX + 100-5, moveY -5 + 100 + marginY+ (resY + marginY) * 1, marginX + 100-5, moveY -5 + 100 + marginY+ (resY + marginY) * (1+1) );
+              drawLine(marginX + 100 + ( technique_names.length + 3 ) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * 1, marginX + 100 + ( technique_names.length + 3 ) * (resX + marginX), moveY -5 + 100 + marginY+ (resY + marginY) * (1+2) );
+              // COMPOSITE PICTURES
+              display_text("<h4>COMPOSITED FROM:</h4>",marginX + 100 + resX + marginX,moveY + 50 + resY / 2 + marginY+ (resY + marginY) * 1);
+              display_text("<h4>WEIGHTED</h4>",marginX + 100 + ( technique_names.length + 2 ) * (resX + marginX),moveY + 50 + resY / 2 + marginY+ (resY + marginY) * 1);
+              display_text("<h4>UNWEIGHTED</h4>",marginX + 100 + ( technique_names.length + 2 ) * (resX + marginX),moveY + 50 + resY / 2 + marginY+ (resY + marginY) * ( 1 + 1));
+              for ( var i = 0; i < technique_names.length; ++i)
+              {
+                display_text("<h4>" + technique_names[i] + "</h4>",marginX + 100 + ( i + 2 ) * (resX + marginX) + resX/2 - 25,moveY + 50 + (resY + marginY) * 1);
+                show_image("complete_our_" + technique_names[i] + "_weighted.png", resX,resY,"Compatible - "+ technique_names[i] + " - WEIGHTED", marginX + 100 + resX + marginX + ( i + 1 ) * (resX + marginX), moveY + 100 + marginY+ (resY + marginY) * 1);
+                show_image("complete_our_" + technique_names[i] + "_unweighted.png", resX,resY,"Compatible - "+ technique_names[i] + " - UNWEIGHTED", marginX + 100 + resX + marginX + ( i + 1 ) * (resX + marginX), moveY + 100 + marginY+ (resY + marginY) * ( 1 + 1 ));
+              }
+        }
+        
+        displaySubsetOfTransport(0);
+        displayComplete(6 * (marginY + resY) + 300);
+    
+        </script>
+    </body>
+</html>

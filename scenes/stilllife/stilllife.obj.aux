@@ -1,0 +1,137 @@
+#CAMERA
+
+TM_ROW0 -0.0000	-1.0000	0.0000
+TM_ROW1 0.2588	-0.0000	0.9659
+TM_ROW2 -0.9659	0.0000	0.2588
+TM_ROW3 -251.4505	22.4524	78.4884
+CAMERA_FOV 0.7854
+CAMERA_TDIST 160.0000
+
+
+#MEDIA
+
+medium M_mediumVino
+absorption 0.122 0.351 0.402 
+emission 0.0 0.0 0.0
+scattering 0.015 0.013 0.011
+g 0.9
+
+medium M_skloVino
+absorption 0.05 0.05 0.05
+emission 0.0 0.0 0.0
+scattering 0.0 0.0 0.0
+g 0.0
+
+medium M_houbaDole
+absorption 0.01 0.01 0.01
+emission 0.0 0.0 0.0
+scattering 0.01 0.01 0.01
+g -0.9
+
+medium M_houbaNahore
+absorption 0.00201 0.00401 0.0002
+emission 0.0 0.0 0.0
+scattering 0.0201 0.0202 0.0221 
+g 0.6
+
+medium M_skloValec
+absorption 0.3 0.05 0.05
+emission 0.0 0.0 0.0
+scattering 0.0 0.0 0.0
+g 0.0
+
+medium M_mediumSklenice
+absorption 0.1014 0.1862 0.4084
+emission 0.0 0.0 0.0
+scattering 0.0201 0.0243 0.0323
+g 0.9
+
+medium M_skloDzban
+absorption 0.05 0.05 0.1
+emission 0.0 0.0 0.0
+scattering 0.0 0.0 0.0
+g 0.0
+
+medium M_mediumDzban
+absorption 0.062 0.047 0.353
+emission 0.0 0.0 0.0
+scattering 0.041 0.039 0.012
+g 0.9
+
+medium M_svicka
+absorption 0.03 0.1 0.2
+emission 0.0 0.0 0.0
+scattering 1.5 1.5 1.5
+g 0.8
+
+
+#MATERIALS
+
+material mediumVino
+mirror 1.0 1.0 1.0
+ior 1.333
+mediumId M_mediumVino
+priority 1
+
+material skloVino
+mirror 1.0 1.0 1.0
+ior 1.520
+mediumId M_skloVino
+priority 5
+
+material houbaDole
+mirror 1.0 1.0 1.0
+ior 1.74
+mediumId M_houbaDole
+priority 1
+
+material houbaNahore
+mirror 1.0 1.0 1.0
+ior 1.4729
+mediumId M_houbaNahore
+priority 2
+
+material skloValec
+mirror 1.0 1.0 1.0
+ior 1.520
+mediumId M_skloValec
+priority 5
+
+material mediumSklenice
+mirror 1.0 1.0 1.0
+ior 1.333
+mediumId M_mediumSklenice
+priority 1
+
+material skloDzban
+mirror 1.0 1.0 1.0
+ior 1.520
+mediumId M_skloDzban
+priority 5
+
+material mediumDzban
+mirror 1.0 1.0 1.0
+ior 1.333
+mediumId M_mediumDzban
+priority 1
+
+material svicka
+mirror 0.60 0.60 0.60
+ior 1.446
+mediumId M_svicka
+priority 1
+
+material Svetlo2
+Ke 800 790 780
+mirror 0.0 0.0 0.0
+ior 1.0
+
+material Svetlo
+Ke 800 750 675
+mirror 0.0 0.0 0.0
+ior 1.0
+
+material Pozadi
+mirror 0.2 0.2 0.2  
+
+light_background_em 0.6 0.96 room.exr            

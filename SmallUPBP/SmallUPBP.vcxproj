@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{50BA09E6-1299-41FF-B89E-234A6A9EB55B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>SmallVCM</RootNamespace>
+    <ProjectName>SmallUPBP</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)\build\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\build\$(Configuration)\obj\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)..\Build\$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)\build\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\build\$(Configuration)\obj\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)..\Build\$(SolutionName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(SolutionName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <OpenMPSupport>false</OpenMPSupport>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../embree-2.0/embree/</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>../embree-2.0/Win32/Debug/sys.lib;../embree-2.0/Win32/Debug/embree.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <OpenMPSupport>false</OpenMPSupport>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../embree-2.0/embree/</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>OpenEXR-dbg.lib;$(OutDir)/sys.lib;$(OutDir)/embree.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <OpenMPSupport>true</OpenMPSupport>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../embree-2.0/embree/</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>../embree-2.0/Win32/Release/sys.lib;../embree-2.0/Win32/Release/embree.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <OpenMPSupport>true</OpenMPSupport>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../embree-2.0/embree/</AdditionalIncludeDirectories>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <OpenMP>GenerateParallelCode</OpenMP>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>../OpenEXR/OpenEXR.lib;$(OutDir)/sys.lib;$(OutDir)/embree.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Bre\Bre.cxx" />
+    <ClCompile Include="src\Scene\Geometry.cxx" />
+    <ClCompile Include="src\Misc\ObjReader.cxx" />
+    <ClCompile Include="src\Beams\PhBeams.cxx" />
+    <ClCompile Include="src\SmallUPBP.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Beams\BeamDensity.hxx" />
+    <ClInclude Include="src\Misc\Utils.hxx" />
+    <ClInclude Include="src\Structs\BoundingBox.hxx" />
+    <ClInclude Include="src\Structs\Pixel.hxx" />
+    <ClInclude Include="src\Structs\Rgb.hxx" />
+    <ClInclude Include="src\Structs\Vector.hxx" />
+    <ClInclude Include="src\Structs\Vector3.hxx" />
+    <ClInclude Include="src\Misc\DebugImages.hxx" />
+    <ClInclude Include="src\Scene\EnvMap.hxx" />
+    <ClInclude Include="src\Scene\Distribution.hxx" />
+    <ClInclude Include="src\Beams\Grid.hxx" />
+    <ClInclude Include="src\Beams\GridStats.hxx" />
+    <ClInclude Include="src\Beams\PhBrute.hxx" />
+    <ClInclude Include="src\Path\BoundaryStack.hxx" />
+    <ClInclude Include="src\Bre\Bre.hxx" />
+    <ClInclude Include="src\Path\Bsdf.hxx" />
+    <ClInclude Include="src\Misc\Config.hxx" />
+    <ClInclude Include="src\Misc\Defs.hxx" />
+    <ClInclude Include="src\Misc\Sse.hxx" />
+    <ClInclude Include="src\Bre\EmbreeAcc.hxx" />
+    <ClInclude Include="src\Path\Frame.hxx" />
+    <ClInclude Include="src\Misc\HashGrid.hxx" />
+    <ClInclude Include="src\Misc\KdTmpl.hxx" />
+    <ClInclude Include="src\Scene\Medium.hxx" />
+    <ClInclude Include="src\Misc\ObjReader.hxx" />
+    <ClInclude Include="src\Renderers\PathTracer.hxx" />
+    <ClInclude Include="src\Path\PathWeight.hxx" />
+    <ClInclude Include="src\Path\PhaseFunction.hxx" />
+    <ClInclude Include="src\Beams\PhBeams.hxx" />
+    <ClInclude Include="src\Beams\PhEmbree.hxx" />
+    <ClInclude Include="src\Beams\PhGrid.hxx" />
+    <ClInclude Include="src\PrecompiledLibs\FastFloat\FastFloat.h" />
+    <ClInclude Include="src\PrecompiledLibs\FastFloat\pow.h" />
+    <ClInclude Include="src\PrecompiledLibs\FastFloat\sse.h" />
+    <ClInclude Include="src\PrecompiledLibs\FastFloat\sse4Floats.h" />
+    <ClInclude Include="src\PrecompiledLibs\FastFloat\sse4Ints.h" />
+    <ClInclude Include="src\PrecompiledLibs\FastFloat\sseMask.h" />
+    <ClInclude Include="src\PrecompiledLibs\FastFloat\sseMath.h" />
+    <ClInclude Include="src\PrecompiledLibs\FastFloat\sseUtil.h" />
+    <ClInclude Include="src\PrecompiledLibs\FastFloat\sse_mathfun.h" />
+    <ClInclude Include="src\Path\PriorityStack.hxx" />
+    <ClInclude Include="src\Renderers\Renderer.hxx" />
+    <ClInclude Include="src\Renderers\EyeLight.hxx" />
+    <ClInclude Include="src\Scene\Camera.hxx" />
+    <ClInclude Include="src\Misc\Framebuffer.hxx" />
+    <ClInclude Include="src\Scene\Geometry.hxx" />
+    <ClInclude Include="src\Scene\Lights.hxx" />
+    <ClInclude Include="src\Scene\Materials.hxx" />
+    <ClInclude Include="src\Path\Ray.hxx" />
+    <ClInclude Include="src\Misc\Rng.hxx" />
+    <ClInclude Include="src\Scene\Scene.hxx" />
+    <ClInclude Include="src\Path\StaticArray.hxx" />
+    <ClInclude Include="src\Structs\Mat4f.hxx" />
+    <ClInclude Include="src\Misc\Timer.hxx" />
+    <ClInclude Include="src\Misc\Utils2.hxx" />
+    <ClInclude Include="src\Path\UPBPLightVertex.hxx" />
+    <ClInclude Include="src\Renderers\VertexCM.hxx" />
+    <ClInclude Include="src\Beams\PhotonBeam.hxx" />
+    <ClInclude Include="src\Path\VltPathVertex.hxx" />
+    <ClInclude Include="src\Renderers\VolBidirPT.hxx" />
+    <ClInclude Include="src\Renderers\VolLightTracer.hxx" />
+    <ClInclude Include="src\Renderers\VolPathTracer.hxx" />
+    <ClInclude Include="src\Renderers\UPBP.hxx" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

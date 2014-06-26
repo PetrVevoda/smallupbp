@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">   
+    <head>      
+        <title>Pyramid template</title>      
+        <meta http-equiv="content-Type" content="text/html; charset=utf-8" />      
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />      
+          
+    </head>   
+    <body>
+  
+		
+        <script>
+        // SET THESE
+        
+          var simple_pyramid = true; // true - simple, false - per technique
+          var maxPathLength = 5; // Max path length param of small upbp
+          var prefix = "test"; // name of the image without .exr
+          var weights = "WEIGHTED"; // Weights settings : WEIGHTED or UNWEIGHTED or BOTH
+          
+          
+         // CHANGE THESE IF NECCESSARY 
+          var resX = 250;
+          var resY = 250;
+          var technique_names = ["BPT","BB1D","PB2D","PP3D","SPM"];
+          var marginX = 10;
+          var marginY = 30;
+          var multY = weights == "BOTH" ? 2 : 1;
+          
+          
+        // CODE
+        function show_image(src, width, height, alt, posX, posY) {
+            var img = document.createElement("img");
+            img.src = src;
+            img.width = width;
+            img.height = height;
+            img.alt = alt;
+            img.style.position="absolute";
+            img.style.top=posY + "px";
+            img.style.left=posX +"px";
+        
+            // This next line will just add it to the <body> tag
+            document.body.appendChild(img);
+        }
+         
+         function display_text(text, posX, posY) {
+            var div = document.createElement("div");
+            div.style.position="absolute";
+            div.style.top=posY + "px";
+            div.style.left=posX +"px";
+            div.innerHTML=text;
+            // This next line will just add it to the <body> tag
+            document.body.appendChild(div);
+        }
+        function displayOneImage(l,t,s,moveY,prefix,technique,suffix)
+        {
+              var t = (l - s);
+              var imagename = prefix + "_L" + l + "_S" + s + "_T" + t + technique + "_" + suffix + ".png";
+              display_text("<h4>" + "S=" + s + " T=" + t + "</h4>",200 + marginX + ((maxPathLength - l - 1 + 2 * s) / 2 * ( resX + marginX )) + resX / 2, moveY + ((l-1) * (resY + marginY) * multY) - marginY - 10   );
+              show_image(imagename, resX, resY, "Length = " + l + " Light Path Length = " + s + " Camera Path Length = " + t, 200 + marginX + ((maxPathLength - l - 1 + 2 * s) / 2 * ( resX + marginX )), moveY + ((l-1) * (resY + marginY) * multY) );
+        }
+        function show_pyramid(prefix, technique, moveY)
+        {
+          for(var l = 1; l <= maxPathLength; ++l)
+            {
+              display_text("<h2>" + l + "</h2>",180 + marginX + ((maxPathLength - l - 1) / 2 * ( resX + marginX )), moveY + ((l-1) * (resY + marginY) * multY) + resY / 2 - 20 );
+              for(var s = 0; s <= l; ++s)
+              {
+                  if ( weights != "BOTH")
+                    displayOneImage(l,t,s,moveY,prefix,technique,weights);
+                  else
+                  {
+                    displayOneImage(l,t,s,moveY,prefix,technique,"WEIGHTED");
+                    displayOneImage(l,t,s,moveY + resY,prefix,technique,"UNWEIGHTED");
+                  }  
+              }
+              if ( weights == "BOTH")
+              { 
+                display_text("<h2>WEIGHTED</h2>",200 + marginX + ((maxPathLength - l - 1 + 2 * ( l + 1 )) / 2 * ( resX + marginX )), moveY + ((l-1) * (resY + marginY) * multY) + resY / 2 - 20 );
+                display_text("<h2>UNWEIGHTED</h2>",200 + marginX + ((maxPathLength - l - 1 + 2 * ( l + 1 )) / 2 * ( resX + marginX )), moveY + resY + ((l-1) * (resY + marginY) * multY) + resY / 2 - 20 );
+              }
+           }
+        }
+        
+        if (simple_pyramid)
+        {
+            show_pyramid(prefix,"",20);
+        }
+        else
+        {
+          for(var t = 0; t < technique_names.length; ++t)
+          {
+             display_text("<h1>" + technique_names[t] + "</h1>",200 + (maxPathLength) / 2 * ( resX + marginX ), (maxPathLength * t * (resY + marginY) * multY + t * 100) );
+             show_pyramid(prefix,"_" + technique_names[t],(maxPathLength * t * (resY + marginY) * multY + t * 100) + marginY + 50);
+          }
+        }
+        
+    
+        </script>
+    </body>
+</html>

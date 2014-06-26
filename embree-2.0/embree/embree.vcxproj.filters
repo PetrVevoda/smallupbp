@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="geometry">
+      <UniqueIdentifier>{2c90805a-c290-4efd-a709-d980fbad0024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{9e3c324f-e89b-473f-9000-0ba0ba639041}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bvh2">
+      <UniqueIdentifier>{dcb1774f-6f5e-4750-9d1a-633de4817039}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bvh4">
+      <UniqueIdentifier>{008714cd-f6c0-4581-b30f-d91830a61ec3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bvh4mb">
+      <UniqueIdentifier>{25537745-11c3-49b7-a700-1446c59bea1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="builders">
+      <UniqueIdentifier>{c031a5b5-7cea-45f3-a0dc-1c268c336dd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bvh4i">
+      <UniqueIdentifier>{dc65c5b0-9a46-496c-8589-b4b9f6d93627}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="bvh8">
+      <UniqueIdentifier>{fdbb9856-843f-4050-88ca-7bfc5b603407}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{b09b9366-647f-42bd-8543-b828fddf4c78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math">
+      <UniqueIdentifier>{d7f0533f-b2fe-41dc-b412-2b534bc1d2db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="simd">
+      <UniqueIdentifier>{c968cfee-8b32-49b9-a407-2b8060231ecc}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="geometry\geometry.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\intersector1_moeller.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\intersector1_pluecker.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\intersector4_moeller.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\intersector4_pluecker.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\intersector8_moeller.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\intersector8_pluecker.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle1.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle1_intersector16_moeller_mic.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle1_intersector1_moeller.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle1_intersector1_moeller_mic.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle1_intersector4_moeller.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle1_intersector8_moeller.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle1i.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle1v.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle4.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle4_intersector1_moeller.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle4_intersector4_moeller.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle4_intersector8_moeller.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle4i.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle4v.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle8.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle8_intersector1_moeller.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangle_mesh.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\triangles.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\virtual_object.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\virtual_object_intersector1.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\virtual_object_intersector16.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\virtual_object_intersector4.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\virtual_object_intersector8.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="geometry\virtual_scene.h">
+      <Filter>geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="common\accel.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\alloc.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\default.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ray.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ray16.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ray4.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ray8.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\registry_accel.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\registry_builder.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\registry_intersector.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\stack_item.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\stat.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh2\bvh2.h">
+      <Filter>bvh2</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh2\bvh2_intersector1.h">
+      <Filter>bvh2</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh2\bvh2_intersector4.h">
+      <Filter>bvh2</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh2\bvh2_intersector8.h">
+      <Filter>bvh2</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4\bvh4.h">
+      <Filter>bvh4</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4\bvh4_intersector1.h">
+      <Filter>bvh4</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4\bvh4_intersector1_avx.h">
+      <Filter>bvh4</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4\bvh4_intersector4_chunk.h">
+      <Filter>bvh4</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4\bvh4_intersector4_hybrid.h">
+      <Filter>bvh4</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4\bvh4_intersector4_single.h">
+      <Filter>bvh4</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4\bvh4_intersector8_chunk.h">
+      <Filter>bvh4</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4\bvh4_intersector8_hybrid.h">
+      <Filter>bvh4</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4\bvh4_intersector8_single.h">
+      <Filter>bvh4</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4mb\bvh4mb.h">
+      <Filter>bvh4mb</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4mb\bvh4mb_builder.h">
+      <Filter>bvh4mb</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4mb\bvh4mb_intersector1.h">
+      <Filter>bvh4mb</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4mb\bvh4mb_intersector4.h">
+      <Filter>bvh4mb</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4mb\bvh4mb_intersector8.h">
+      <Filter>bvh4mb</Filter>
+    </ClInclude>
+    <ClInclude Include="builders\atomic_set.h">
+      <Filter>builders</Filter>
+    </ClInclude>
+    <ClInclude Include="builders\bvh_builder.h">
+      <Filter>builders</Filter>
+    </ClInclude>
+    <ClInclude Include="builders\bvh_rotate.h">
+      <Filter>builders</Filter>
+    </ClInclude>
+    <ClInclude Include="builders\bvh_sort.h">
+      <Filter>builders</Filter>
+    </ClInclude>
+    <ClInclude Include="builders\bvh_statistics.h">
+      <Filter>builders</Filter>
+    </ClInclude>
+    <ClInclude Include="builders\heuristic_binning.h">
+      <Filter>builders</Filter>
+    </ClInclude>
+    <ClInclude Include="builders\heuristic_spatial.h">
+      <Filter>builders</Filter>
+    </ClInclude>
+    <ClInclude Include="builders\heuristics.h">
+      <Filter>builders</Filter>
+    </ClInclude>
+    <ClInclude Include="builders\primref.h">
+      <Filter>builders</Filter>
+    </ClInclude>
+    <ClInclude Include="builders\primrefalloc.h">
+      <Filter>builders</Filter>
+    </ClInclude>
+    <ClInclude Include="builders\primrefblock.h">
+      <Filter>builders</Filter>
+    </ClInclude>
+    <ClInclude Include="builders\primrefgen.h">
+      <Filter>builders</Filter>
+    </ClInclude>
+    <ClInclude Include="builders\splitter.h">
+      <Filter>builders</Filter>
+    </ClInclude>
+    <ClInclude Include="builders\splitter_fallback.h">
+      <Filter>builders</Filter>
+    </ClInclude>
+    <ClInclude Include="builders\splitter_parallel.h">
+      <Filter>builders</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4i\bvh4i.h">
+      <Filter>bvh4i</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh4i\bvh4i_intersector1.h">
+      <Filter>bvh4i</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh8\bvh8.h">
+      <Filter>bvh8</Filter>
+    </ClInclude>
+    <ClInclude Include="bvh8\bvh8_intersector1.h">
+      <Filter>bvh8</Filter>
+    </ClInclude>
+    <ClInclude Include="include\embree.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\intersector1.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\intersector4.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\intersector8.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="math\affinespace.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\bbox.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\col3.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\col4.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\color.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\color_scalar.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\color_sse.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\linearspace3.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\math.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\permutation.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\quaternion.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\random.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\vec2.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\vec3.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\vec4.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\vector3b_sse.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\vector3f_sse.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\vector3i_sse.h">
+      <Filter>math</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\avx.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\avxb.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\avxf.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\avxi.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\avxi_emu.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\immintrin_emu.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\mic.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\simd.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\smmintrin_emu.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\sse.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\sse_mic.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\sse_special.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\sseb.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\sseb_mic.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\ssef.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\ssef_mic.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\ssei.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+    <ClInclude Include="simd\ssei_mic.h">
+      <Filter>simd</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="geometry\triangle_mesh.cpp">
+      <Filter>geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="geometry\virtual_scene.cpp">
+      <Filter>geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="common\accel.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\alloc.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\registry_accel.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\registry_builder.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\registry_intersector.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\stat.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh2\bvh2.cpp">
+      <Filter>bvh2</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh2\bvh2_intersector1.cpp">
+      <Filter>bvh2</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh2\bvh2_intersector4.cpp">
+      <Filter>bvh2</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh2\bvh2_intersector8.cpp">
+      <Filter>bvh2</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4\bvh4.cpp">
+      <Filter>bvh4</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4\bvh4_intersector1.cpp">
+      <Filter>bvh4</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4\bvh4_intersector1_avx.cpp">
+      <Filter>bvh4</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4\bvh4_intersector4_chunk.cpp">
+      <Filter>bvh4</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4\bvh4_intersector4_hybrid.cpp">
+      <Filter>bvh4</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4\bvh4_intersector4_single.cpp">
+      <Filter>bvh4</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4\bvh4_intersector8_chunk.cpp">
+      <Filter>bvh4</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4\bvh4_intersector8_hybrid.cpp">
+      <Filter>bvh4</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4\bvh4_intersector8_single.cpp">
+      <Filter>bvh4</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4mb\bvh4mb.cpp">
+      <Filter>bvh4mb</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4mb\bvh4mb_builder.cpp">
+      <Filter>bvh4mb</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4mb\bvh4mb_intersector1.cpp">
+      <Filter>bvh4mb</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4mb\bvh4mb_intersector4.cpp">
+      <Filter>bvh4mb</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4mb\bvh4mb_intersector8.cpp">
+      <Filter>bvh4mb</Filter>
+    </ClCompile>
+    <ClCompile Include="builders\heuristic_binning.cpp">
+      <Filter>builders</Filter>
+    </ClCompile>
+    <ClCompile Include="builders\heuristic_spatial.cpp">
+      <Filter>builders</Filter>
+    </ClCompile>
+    <ClCompile Include="builders\primrefgen.cpp">
+      <Filter>builders</Filter>
+    </ClCompile>
+    <ClCompile Include="builders\splitter.cpp">
+      <Filter>builders</Filter>
+    </ClCompile>
+    <ClCompile Include="builders\splitter_fallback.cpp">
+      <Filter>builders</Filter>
+    </ClCompile>
+    <ClCompile Include="builders\splitter_parallel.cpp">
+      <Filter>builders</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4i\bvh4i.cpp">
+      <Filter>bvh4i</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh4i\bvh4i_intersector1.cpp">
+      <Filter>bvh4i</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh8\bvh8.cpp">
+      <Filter>bvh8</Filter>
+    </ClCompile>
+    <ClCompile Include="bvh8\bvh8_intersector1.cpp">
+      <Filter>bvh8</Filter>
+    </ClCompile>
+    <ClCompile Include="embree.cpp" />
+  </ItemGroup>
+</Project>

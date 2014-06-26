@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{ED858C9A-C161-4036-8DF7-EB169BCB81BC}</ProjectGuid>
+    <RootNamespace>embree</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v100</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v100</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v100</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v100</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.60315.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)..\Build\$(SolutionName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)..\Build\$(SolutionName)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\Build\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)/common;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)/common;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)/common;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="geometry\geometry.h" />
+    <ClInclude Include="geometry\intersector1_moeller.h" />
+    <ClInclude Include="geometry\intersector1_pluecker.h" />
+    <ClInclude Include="geometry\intersector4_moeller.h" />
+    <ClInclude Include="geometry\intersector4_pluecker.h" />
+    <ClInclude Include="geometry\intersector8_moeller.h" />
+    <ClInclude Include="geometry\intersector8_pluecker.h" />
+    <ClInclude Include="geometry\triangle.h" />
+    <ClInclude Include="geometry\triangle1.h" />
+    <ClInclude Include="geometry\triangle1_intersector16_moeller_mic.h" />
+    <ClInclude Include="geometry\triangle1_intersector1_moeller.h" />
+    <ClInclude Include="geometry\triangle1_intersector1_moeller_mic.h" />
+    <ClInclude Include="geometry\triangle1_intersector4_moeller.h" />
+    <ClInclude Include="geometry\triangle1_intersector8_moeller.h" />
+    <ClInclude Include="geometry\triangle1i.h" />
+    <ClInclude Include="geometry\triangle1v.h" />
+    <ClInclude Include="geometry\triangle4.h" />
+    <ClInclude Include="geometry\triangle4_intersector1_moeller.h" />
+    <ClInclude Include="geometry\triangle4_intersector4_moeller.h" />
+    <ClInclude Include="geometry\triangle4_intersector8_moeller.h" />
+    <ClInclude Include="geometry\triangle4i.h" />
+    <ClInclude Include="geometry\triangle4v.h" />
+    <ClInclude Include="geometry\triangle8.h" />
+    <ClInclude Include="geometry\triangle8_intersector1_moeller.h" />
+    <ClInclude Include="geometry\triangle_mesh.h" />
+    <ClInclude Include="geometry\triangles.h" />
+    <ClInclude Include="geometry\virtual_object.h" />
+    <ClInclude Include="geometry\virtual_object_intersector1.h" />
+    <ClInclude Include="geometry\virtual_object_intersector16.h" />
+    <ClInclude Include="geometry\virtual_object_intersector4.h" />
+    <ClInclude Include="geometry\virtual_object_intersector8.h" />
+    <ClInclude Include="geometry\virtual_scene.h" />
+    <ClInclude Include="common\accel.h" />
+    <ClInclude Include="common\alloc.h" />
+    <ClInclude Include="common\default.h" />
+    <ClInclude Include="common\ray.h" />
+    <ClInclude Include="common\ray16.h" />
+    <ClInclude Include="common\ray4.h" />
+    <ClInclude Include="common\ray8.h" />
+    <ClInclude Include="common\registry_accel.h" />
+    <ClInclude Include="common\registry_builder.h" />
+    <ClInclude Include="common\registry_intersector.h" />
+    <ClInclude Include="common\stack_item.h" />
+    <ClInclude Include="common\stat.h" />
+    <ClInclude Include="bvh2\bvh2.h" />
+    <ClInclude Include="bvh2\bvh2_intersector1.h" />
+    <ClInclude Include="bvh2\bvh2_intersector4.h" />
+    <ClInclude Include="bvh2\bvh2_intersector8.h" />
+    <ClInclude Include="bvh4\bvh4.h" />
+    <ClInclude Include="bvh4\bvh4_intersector1.h" />
+    <ClInclude Include="bvh4\bvh4_intersector1_avx.h" />
+    <ClInclude Include="bvh4\bvh4_intersector4_chunk.h" />
+    <ClInclude Include="bvh4\bvh4_intersector4_hybrid.h" />
+    <ClInclude Include="bvh4\bvh4_intersector4_single.h" />
+    <ClInclude Include="bvh4\bvh4_intersector8_chunk.h" />
+    <ClInclude Include="bvh4\bvh4_intersector8_hybrid.h" />
+    <ClInclude Include="bvh4\bvh4_intersector8_single.h" />
+    <ClInclude Include="bvh4mb\bvh4mb.h" />
+    <ClInclude Include="bvh4mb\bvh4mb_builder.h" />
+    <ClInclude Include="bvh4mb\bvh4mb_intersector1.h" />
+    <ClInclude Include="bvh4mb\bvh4mb_intersector4.h" />
+    <ClInclude Include="bvh4mb\bvh4mb_intersector8.h" />
+    <ClInclude Include="builders\atomic_set.h" />
+    <ClInclude Include="builders\bvh_builder.h" />
+    <ClInclude Include="builders\bvh_rotate.h" />
+    <ClInclude Include="builders\bvh_sort.h" />
+    <ClInclude Include="builders\bvh_statistics.h" />
+    <ClInclude Include="builders\heuristic_binning.h" />
+    <ClInclude Include="builders\heuristic_spatial.h" />
+    <ClInclude Include="builders\heuristics.h" />
+    <ClInclude Include="builders\primref.h" />
+    <ClInclude Include="builders\primrefalloc.h" />
+    <ClInclude Include="builders\primrefblock.h" />
+    <ClInclude Include="builders\primrefgen.h" />
+    <ClInclude Include="builders\splitter.h" />
+    <ClInclude Include="builders\splitter_fallback.h" />
+    <ClInclude Include="builders\splitter_parallel.h" />
+    <ClInclude Include="bvh4i\bvh4i.h" />
+    <ClInclude Include="bvh4i\bvh4i_intersector1.h" />
+    <ClInclude Include="bvh8\bvh8.h" />
+    <ClInclude Include="bvh8\bvh8_intersector1.h" />
+    <ClInclude Include="include\embree.h" />
+    <ClInclude Include="include\intersector1.h" />
+    <ClInclude Include="include\intersector4.h" />
+    <ClInclude Include="include\intersector8.h" />
+    <ClInclude Include="math\affinespace.h" />
+    <ClInclude Include="math\bbox.h" />
+    <ClInclude Include="math\col3.h" />
+    <ClInclude Include="math\col4.h" />
+    <ClInclude Include="math\color.h" />
+    <ClInclude Include="math\color_scalar.h" />
+    <ClInclude Include="math\color_sse.h" />
+    <ClInclude Include="math\linearspace3.h" />
+    <ClInclude Include="math\math.h" />
+    <ClInclude Include="math\permutation.h" />
+    <ClInclude Include="math\quaternion.h" />
+    <ClInclude Include="math\random.h" />
+    <ClInclude Include="math\vec2.h" />
+    <ClInclude Include="math\vec3.h" />
+    <ClInclude Include="math\vec4.h" />
+    <ClInclude Include="math\vector3b_sse.h" />
+    <ClInclude Include="math\vector3f_sse.h" />
+    <ClInclude Include="math\vector3i_sse.h" />
+    <ClInclude Include="simd\avx.h" />
+    <ClInclude Include="simd\avxb.h" />
+    <ClInclude Include="simd\avxf.h" />
+    <ClInclude Include="simd\avxi.h" />
+    <ClInclude Include="simd\avxi_emu.h" />
+    <ClInclude Include="simd\immintrin_emu.h" />
+    <ClInclude Include="simd\mic.h" />
+    <ClInclude Include="simd\simd.h" />
+    <ClInclude Include="simd\smmintrin_emu.h" />
+    <ClInclude Include="simd\sse.h" />
+    <ClInclude Include="simd\sse_mic.h" />
+    <ClInclude Include="simd\sse_special.h" />
+    <ClInclude Include="simd\sseb.h" />
+    <ClInclude Include="simd\sseb_mic.h" />
+    <ClInclude Include="simd\ssef.h" />
+    <ClInclude Include="simd\ssef_mic.h" />
+    <ClInclude Include="simd\ssei.h" />
+    <ClInclude Include="simd\ssei_mic.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="geometry\triangle_mesh.cpp" />
+    <ClCompile Include="geometry\virtual_scene.cpp" />
+    <ClCompile Include="common\accel.cpp" />
+    <ClCompile Include="common\alloc.cpp" />
+    <ClCompile Include="common\registry_accel.cpp" />
+    <ClCompile Include="common\registry_builder.cpp" />
+    <ClCompile Include="common\registry_intersector.cpp" />
+    <ClCompile Include="common\stat.cpp" />
+    <ClCompile Include="bvh2\bvh2.cpp" />
+    <ClCompile Include="bvh2\bvh2_intersector1.cpp" />
+    <ClCompile Include="bvh2\bvh2_intersector4.cpp" />
+    <ClCompile Include="bvh2\bvh2_intersector8.cpp" />
+    <ClCompile Include="bvh4\bvh4.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+    </ClCompile>
+    <ClCompile Include="bvh4\bvh4_intersector1.cpp" />
+    <ClCompile Include="bvh4\bvh4_intersector1_avx.cpp" />
+    <ClCompile Include="bvh4\bvh4_intersector4_chunk.cpp" />
+    <ClCompile Include="bvh4\bvh4_intersector4_hybrid.cpp" />
+    <ClCompile Include="bvh4\bvh4_intersector4_single.cpp" />
+    <ClCompile Include="bvh4\bvh4_intersector8_chunk.cpp" />
+    <ClCompile Include="bvh4\bvh4_intersector8_hybrid.cpp" />
+    <ClCompile Include="bvh4\bvh4_intersector8_single.cpp" />
+    <ClCompile Include="bvh4mb\bvh4mb.cpp" />
+    <ClCompile Include="bvh4mb\bvh4mb_builder.cpp" />
+    <ClCompile Include="bvh4mb\bvh4mb_intersector1.cpp" />
+    <ClCompile Include="bvh4mb\bvh4mb_intersector4.cpp" />
+    <ClCompile Include="bvh4mb\bvh4mb_intersector8.cpp" />
+    <ClCompile Include="builders\heuristic_binning.cpp" />
+    <ClCompile Include="builders\heuristic_spatial.cpp" />
+    <ClCompile Include="builders\primrefgen.cpp" />
+    <ClCompile Include="builders\splitter.cpp" />
+    <ClCompile Include="builders\splitter_fallback.cpp" />
+    <ClCompile Include="builders\splitter_parallel.cpp" />
+    <ClCompile Include="bvh4i\bvh4i.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MinSpace</Optimization>
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinSpace</Optimization>
+    </ClCompile>
+    <ClCompile Include="bvh4i\bvh4i_intersector1.cpp" />
+    <ClCompile Include="bvh8\bvh8.cpp" />
+    <ClCompile Include="bvh8\bvh8_intersector1.cpp" />
+    <ClCompile Include="embree.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="sys\sys.vcxproj">
+      <Project>{b118ab3d-ab5b-4d86-90c2-8e91e8457710}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
