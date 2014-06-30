@@ -1,0 +1,1 @@
+Because of a file size limit on GitHub, the bathroom.obj file is zipped. Please extract it first before use.
