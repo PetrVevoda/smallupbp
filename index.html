@@ -97,7 +97,7 @@ Křivánek (<a href="mailto:jaroslav.krivanek@mff.cuni.cz">jaroslav.krivanek@mff
 <a name="compilation-and-run" class="anchor" href="#compilation-and-run"><span class="octicon octicon-link"></span></a>Compilation and run</h3>
 
 <p>The easiest way to compile SmallUPBP is to use the provided Visual Studio 2013
-solution <code>SmallUPBP\SmallUPBP.sln</code> (should work in Visual Studio 2010 or later). 
+solution <code>SmallUPBP\SmallUPBP.sln</code>. It should work in Visual Studio 2010 or later but requires Visual Studio 2010 to be installed. When opening it in a newer version of Visual Studio, do not let it upgrade included projects.
 Simply build it and the <code>SmallUPBP.exe</code> file will be created in <code>Build\SmallUPBP\x64\Release</code>
 (or <code>Build\SmallUPBP\x64\Debug</code> dependig on what configuration you have selected). 
 This file is completely independent of any other files, you can move it and run 
@@ -106,7 +106,7 @@ wherever you want (however, the batch files in the <code>scenes</code> folder ex
 <p>To give you an idea: the solution contains three projects - <em>embree</em>, <em>sys</em> and
 <em>SmallUPBP</em>. The first two are parts of Embree and need to be compiled as static
 libraries and linked along with <code>OpenEXR\OpenEXR.lib</code> with the main project <em>SmallUPBP</em>.
-We recommend to compile with C++11 support, but the program will work even without it, 
+We recommend to compile with C++11 support (VS2010 or later), but the program will work even without it, 
 though a worse random number generator will be used.</p>
 
 <p>As mentioned earlier, the resulting executable file is a command line program.
