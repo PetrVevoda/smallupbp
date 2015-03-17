@@ -78,17 +78,30 @@ It is released for educational and research purposes and neither the code nor
 its documentation claims to be complete and bug-free. We apologize for any errors
 and confusion.</p>
 
+<p>Thorough description of the renderer, including its usage and implementation details 
+as well as its theoretical background, is given by Petr Vévoda in his thesis</p> 
+
+<blockquote>
+<p><strong><a href="thesis.pdf">Robust light transport simulation in participating media</a></strong><br>
+ Petr Vévoda<br>
+ Master's thesis. Charles University in Prague, Prague, Czech Republic, February 2015.<br>
+ </p>
+</blockquote>
+<p>Here we present its slightly modified version with minor fixes and improvements.
+Note that the thesis originally refers to a DVD. Content of the DVD is almost the same 
+as of the archive you can download from this page.</p>
+
 <p>If you have any questions or ideas for improvement, feel free to contact Petr Vévoda (<a href="mailto:petrvevoda@seznam.cz">petrvevoda@seznam.cz</a>) or Jaroslav
 Křivánek (<a href="mailto:jaroslav.krivanek@mff.cuni.cz">jaroslav.krivanek@mff.cuni.cz</a>).</p>
 
 <h3>
 <a name="contents" class="anchor" href="#contents"><span class="octicon octicon-link"></span></a>Contents</h3>
 
-<p>The archive you have downloaded contains following folders and files:</p>
+<p>The archive you can download from this page contains following folders and files:</p>
 
 <ul>
 <li>embree-2.0 - source code of Embree</li>
-<li>OpenEXR    - header files and precompiled libraries of OpenEXR</li>
+<li>OpenEXR    - header files and source code of OpenEXR</li>
 <li>scenes     - scene and batch files used to render images in the UPBP paper</li>
 <li>SmallUPBP  - source code of this renderer</li>
 <li>Tools      - a few scripts for displaying and comparing rendered images</li>
@@ -96,22 +109,27 @@ Křivánek (<a href="mailto:jaroslav.krivanek@mff.cuni.cz">jaroslav.krivanek@mff
 </ul><h3>
 <a name="compilation-and-run" class="anchor" href="#compilation-and-run"><span class="octicon octicon-link"></span></a>Compilation and run</h3>
 
-<p>The easiest way to compile SmallUPBP is to use the provided Visual Studio 2013
-solution <code>SmallUPBP\SmallUPBP.sln</code>. It should work in Visual Studio 2010 or later but requires Visual Studio 2010 to be installed. When opening it in a newer version of Visual Studio, do not let it upgrade included projects.
-Simply build it and the <code>SmallUPBP.exe</code> file will be created in <code>Build\SmallUPBP\x64\Release</code>
-(or <code>Build\SmallUPBP\x64\Debug</code> dependig on what configuration you have selected). 
-This file is completely independent of any other files, you can move it and run 
-wherever you want (however, the batch files in the <code>scenes</code> folder expect it in the original location).</p>
-
-<p>To give you an idea: the solution contains three projects - <em>embree</em>, <em>sys</em> and
-<em>SmallUPBP</em>. The first two are parts of Embree and need to be compiled as static
-libraries and linked along with <code>OpenEXR\OpenEXR.lib</code> with the main project <em>SmallUPBP</em>.
-All three projects currently need to be compiled with the VS2010 compiler.</p>
+<p>The source code is divided into two Microsoft Visual Studio 2013 solutions. The first one, 
+<code>OpenEXR.sln</code> in the <code>OpenEXR\src</code> folder, contains single project
+of the same name with the OpenEXR library. The second one, <code>SmallUPBP.sln</code> 
+in the <code>SmallUPBP</code> folder, contains three projects: <em>embree</em>, <em>sys</em>
+and <em>SmallUPBP</em>. The first two are parts of Embree and need to be compiled 
+with the <em>OpenEXR</em> project as static libraries and linked with the main <em>SmallUPBP</em> project. 
+The easiest way to do this is to use the provided solutions. Firstly, build the <code>OpenEXR.sln</code> 
+solution. It creates the static library <code>OpenEXR.lib</code> (or <code>OpenEXR-dbg.lib</code> 
+depending on the selected configuration) in the <code>OpenEXR</code> folder. Then build <code>SmallUPBP.sln</code>. 
+It creates the remaining <code>embree.lib</code> and <code>sys.lib</code> static libraries
+as well as the executable <code>SmallUPBP.exe</code> file in the <code>Build\SmallUPBP\x64\Release</code> folder
+(or in the <code>Build\SmallUPBP\x64\Debug</code> folder depending on the selected configuration). 
+Note that the build configurations of both solutions must match. The <code>SmallUPBP.exe</code> 
+file is completely independent of any other files and can be moved and run freely 
+(however, the batch files in the <code>scenes</code> folder expect it in the original location).</p>
 
 <p>As mentioned earlier, the resulting executable file is a command line program.
 Type <code>SmallUPBP.exe -h</code> or <code>SmallUPBP.exe -hf</code> to see a short and full help respectively.
 The short help contains only basic arguments sufficient to render your first images
-while the full version lists all arguments the program knows.</p>
+while the full version lists all arguments the program knows. For more information
+about the program please see the Petr Vévoda's thesis.</p>
       </section>
     </div>
 
