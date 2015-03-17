@@ -134,7 +134,7 @@ struct VolumeSegment
 	float mDistMax;         // Distance of the segment end from the ray origin.
 	float mRaySamplePdf;    // If scattering occurred in this medium: PDF of having samples in this segment; otherwise: PDF of passing through the entire medium.
 	float mRaySampleRevPdf; // Similar to mRaySamplePdf but in a reverse direction.
-	Rgb   mAttenuation;     // Attenuation caused by this segment (not divide by PDF).
+	Rgb   mAttenuation;     // Attenuation caused by this segment (not divided by PDF).
 	Rgb   mEmission;        // Emission coming from this segment (neither attenuated, nor divided by PDF).
 	int   mMediumID;		// ID of the medium in this segment.
 

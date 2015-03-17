@@ -140,9 +140,7 @@ float render(
 	aConfig.mCameraTracingTime = 0;
 	aConfig.mBeamDensity.Setup(aConfig.mBeamDensType, aConfig.mScene->mCamera.mResolution, aConfig.mBeamDensMax);
 
-    // With very low number of iterations and high number of threads
-	// (or if running in Debug mode)
-    // not all created renderers had to have been used.
+    // Not all created renderers had to have been used.
     // Those must not participate in accumulation.
     for(int i=0; i<usedThreads; i++)
     {
@@ -202,6 +200,7 @@ int main(int argc, const char *argv[])
 	{
 		// Warns when not using C++11 Mersenne Twister
 		PrintRngWarning();
+
 		EmbreeAcc::initLib();
 		
 		// Setups config based on command line
@@ -216,7 +215,7 @@ int main(int argc, const char *argv[])
 		if (config.mScene == NULL)
 			return 1;
 
-		// Sets up framebuffer and number of threads
+		// Sets up framebuffer
 		Framebuffer fbuffer;
 		config.mFramebuffer = &fbuffer;
 

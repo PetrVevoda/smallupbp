@@ -480,6 +480,7 @@ public:
 				std::cout << "allocating : " << mLightVertices.capacity() << std::endl;
 			UPBP_ASSERT(mLightVertices.size() == 0 && mLightVertices.capacity() >= (int)maxLightVerts);
 
+			// Remove all photon beams and reserve space for some
 			mPhotonBeamsArray.clear();
 			mPhotonBeamsArray.reserve((int)maxBeams);
 			UPBP_ASSERT(mPhotonBeamsArray.size() == 0 && mPhotonBeamsArray.capacity() >= (int)maxBeams);
@@ -603,6 +604,7 @@ public:
 						lightVertex.mMisData.mRaySamplePdfInv = raySamplePdfInv;
 						lightVertex.mMisData.mRaySampleRevPdfInv = 1.0f;
 						lightVertex.mMisData.mSinTheta = 0.0f;
+						lightVertex.mMisData.mCosThetaOut = 0.0f;
 						lightVertex.mMisData.mSurfMisWeightFactor = bsdf.IsOnSurface() ? mSurfMisWeightFactor : 0;
 						lightVertex.mMisData.mPP3DMisWeightFactor = bsdf.IsOnSurface() ? 0 : mPP3DMisWeightFactor;
 						lightVertex.mMisData.mPB2DMisWeightFactor = bsdf.IsOnSurface() ? 0 : mPB2DMisWeightFactor;
@@ -619,7 +621,7 @@ public:
 						{
 							if (bsdf.GetMedium()->IsHomogeneous())
 							{
-								lightVertex.mMisData.mRaySamplePdfsRatio = 1.0f / ((const HomogeneousMedium*)bsdf.GetMedium())->mMinPositiveAttenuationCoefCoord();
+								lightVertex.mMisData.mRaySamplePdfsRatio = 1.0f / ((const HomogeneousMedium*)bsdf.GetMedium())->mMinPositiveAttenuationCoefComp();
 								lightVertex.mMisData.mRaySampleRevPdfsRatio = lightVertex.mMisData.mRaySamplePdfsRatio;
 							}
 							else
@@ -664,7 +666,6 @@ public:
 						break;
 
 					// Continue random walk
-					bool passed = false;
 					if (!SampleScattering(bsdf, hitPoint, isect, lightState, mLightVertices.back().mMisData, mLightVertices.at(mLightVertices.size() - 2).mMisData))
 						break;
 				}
@@ -712,7 +713,7 @@ public:
 				}
 
 				//////////////////////////////////////////////////////////////////////////
-				// Build acceleration structure pro BB1D
+				// Build acceleration structure for BB1D
 				//////////////////////////////////////////////////////////////////////////
 				if (mMergeWithLightVerticesBB1D && !mPhotonBeamsArray.empty())
 				{
@@ -770,7 +771,7 @@ public:
 				{
 					//UPBP_ASSERT(!mScene.GetGlobalMediumPtr()->HasScattering());			
 
-					// Vertex merging: beam x point 2D
+					// Vertex merging: point x beam 2D
 					if (mMergeWithLightVerticesPB2D && !mLightVertices.empty())
 					{
 						mDebugImages.ResetAccum();
@@ -840,6 +841,8 @@ public:
 					mCameraVerticesMisData[cameraState.mPathLength].mRaySamplePdfInv = raySamplePdfInv;
 					mCameraVerticesMisData[cameraState.mPathLength].mRaySampleRevPdfInv = 1.0f;
 					mCameraVerticesMisData[cameraState.mPathLength].mRaySamplePdfsRatio = 0.0f;
+					mCameraVerticesMisData[cameraState.mPathLength].mSinTheta = 0.0f;
+					mCameraVerticesMisData[cameraState.mPathLength].mCosThetaOut = 0.0f;
 					mCameraVerticesMisData[cameraState.mPathLength].mSurfMisWeightFactor = 0.0f;
 					mCameraVerticesMisData[cameraState.mPathLength].mPP3DMisWeightFactor = 0.0f;
 					mCameraVerticesMisData[cameraState.mPathLength].mPB2DMisWeightFactor = 0.0f;
@@ -872,7 +875,7 @@ public:
 				UPBP_ASSERT(isect.IsValid());
 
 				////////////////////////////////////////////////////////////////
-				// Vertex merging: beam x point 2D
+				// Vertex merging: point x beam 2D
 				if (mMergeWithLightVerticesPB2D && !mLightVertices.empty())
 				{
 					mDebugImages.ResetAccum();
@@ -947,6 +950,7 @@ public:
 					mCameraVerticesMisData[cameraState.mPathLength].mRaySamplePdfInv = raySamplePdfInv;
 					mCameraVerticesMisData[cameraState.mPathLength].mRaySampleRevPdfInv = 1.0f;
 					mCameraVerticesMisData[cameraState.mPathLength].mSinTheta = 0.0f;
+					mCameraVerticesMisData[cameraState.mPathLength].mCosThetaOut = 0.0f;
 					mCameraVerticesMisData[cameraState.mPathLength].mSurfMisWeightFactor = bsdf.IsOnSurface() ? (isect.mLightID >= 0 ? 0.0f : mSurfMisWeightFactor) : 0.0f;
 					mCameraVerticesMisData[cameraState.mPathLength].mPP3DMisWeightFactor = bsdf.IsOnSurface() ? 0.0f : mPP3DMisWeightFactor;
 					mCameraVerticesMisData[cameraState.mPathLength].mPB2DMisWeightFactor = bsdf.IsOnSurface() ? 0.0f : mPB2DMisWeightFactor;
@@ -963,7 +967,7 @@ public:
 					{
 						if (bsdf.GetMedium()->IsHomogeneous())
 						{
-							mCameraVerticesMisData[cameraState.mPathLength].mRaySamplePdfsRatio = 1.0f / ((const HomogeneousMedium*)bsdf.GetMedium())->mMinPositiveAttenuationCoefCoord();
+							mCameraVerticesMisData[cameraState.mPathLength].mRaySamplePdfsRatio = 1.0f / ((const HomogeneousMedium*)bsdf.GetMedium())->mMinPositiveAttenuationCoefComp();
 							mCameraVerticesMisData[cameraState.mPathLength].mRaySampleRevPdfsRatio = mCameraVerticesMisData[cameraState.mPathLength].mRaySamplePdfsRatio;
 						}
 						else
@@ -1628,7 +1632,7 @@ private:
 		lightVertex.mMisData.mRaySamplePdfsRatio = 0.0f;
 		lightVertex.mMisData.mRaySampleRevPdfsRatio = 0.0f;
 		lightVertex.mMisData.mSinTheta = 0.0f;
-		lightVertex.mMisData.mCosThetaOut = lightVertex.mMisData.mRevPdfA;
+		lightVertex.mMisData.mCosThetaOut = (!light->IsDelta() && light->IsFinite()) ? cosLight : 1.f;
 		lightVertex.mMisData.mSurfMisWeightFactor = 0.0f;
 		lightVertex.mMisData.mPP3DMisWeightFactor = 0.0f;
 		lightVertex.mMisData.mPB2DMisWeightFactor = 0.0f;
@@ -1960,7 +1964,7 @@ private:
 		aoCurrentMisData.mRevPdfA *= cosThetaOut;
 		aoCurrentMisData.mRevPdfAWithoutBsdf = aoCurrentMisData.mRevPdfA;
 		aoCurrentMisData.mIsSpecular = specular;
-		aoCurrentMisData.mSinTheta = aBSDF.IsInMedium() ? sinTheta : 0.0f;
+		aoCurrentMisData.mSinTheta = sinTheta;
 		aoCurrentMisData.mCosThetaOut = cosThetaOut;
 		aoPreviousMisData.mRevPdfA *= bsdfRevPdfW;
 

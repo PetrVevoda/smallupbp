@@ -40,7 +40,7 @@
 #include "Geometry.hxx"
 #include "Camera.hxx"
 #include "Lights.hxx"
-#include "Medium.hxx"
+#include "Media.hxx"
 
 class Scene
 {
@@ -326,7 +326,7 @@ public:
 		{
 			notYetReal = false;
 			
-			// Try find intersection. We use origin epsilon offset for numerical stable intersection, but we immediately
+			// Try to find intersection. We use origin epsilon offset for numerical stable intersection, but we immediately
 			// restore real origin and distance afterwards for clarity
 			
 			tempRay.origin = tempRay.origin + tempRay.direction * realEps;

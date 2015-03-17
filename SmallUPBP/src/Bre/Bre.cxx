@@ -180,7 +180,7 @@ public:
 	 * @brief	Test intersection between a ray and a 'photon disc'.
 	 * 			
 	 * 			The photon disc is specified by the position aPhotonPos and radius aPhotonRad. The
-	 * 			disk is assumed to face the ray (i.e. the disk plane is perpendicular to the ray).
+	 * 			disc is assumed to face the ray (i.e. the disc plane is perpendicular to the ray).
 	 * 			Intersections are reported only in the interval [aMinT, aMaxT)  (i.e. includes aMinT
 	 * 			but excludes aMaxT).
 	 *
@@ -255,7 +255,7 @@ public:
 				const HomogeneousMedium * medium = ((const HomogeneousMedium *)ray.medium);
 				attenuation = medium->EvalAttenuation(photonIsectDist - ray.tnear);
 				if (ray.flags & SHORT_BEAM)
-					attenuation /= attenuation[medium->mMinPositiveAttenuationCoefCoordIndex()];
+					attenuation /= attenuation[medium->mMinPositiveAttenuationCoefCompIndex()];
 			}
 			else
 			{
@@ -321,7 +321,7 @@ public:
 			// Compute intersection.
 			const Pos isectPt = ray.origRay->origin + photonIsectDist * ray.origRay->direction;
 
-			// Compute attenuation in current segment and overall pds.
+			// Compute attenuation in current segment and overall pdfs.
 			Rgb attenuation;
 			float raySamplePdf = 1.0f;
 			float raySampleRevPdf = 1.0f;
@@ -330,12 +330,12 @@ public:
 			{
 				const HomogeneousMedium * medium = ((const HomogeneousMedium *)ray.medium);
 				attenuation = medium->EvalAttenuation(photonIsectDist - ray.tnear);
-				const float pfd = attenuation[medium->mMinPositiveAttenuationCoefCoordIndex()];
+				const float pdf = attenuation[medium->mMinPositiveAttenuationCoefCompIndex()];
 				if (ray.flags & SHORT_BEAM)
-					attenuation /= pfd;
-				raySamplePdf = medium->mMinPositiveAttenuationCoefCoord() * pfd;
-				raySampleRevPdf = (data->mRaySamplingFlags & AbstractMedium::kOriginInMedium) ? raySamplePdf : pfd;
-				raySamplePdfsRatio = 1.0f / medium->mMinPositiveAttenuationCoefCoord();
+					attenuation /= pdf;
+				raySamplePdf = medium->mMinPositiveAttenuationCoefComp() * pdf;
+				raySampleRevPdf = (data->mRaySamplingFlags & AbstractMedium::kOriginInMedium) ? raySamplePdf : pdf;
+				raySamplePdfsRatio = 1.0f / medium->mMinPositiveAttenuationCoefComp();
 			}
 			else
 			{

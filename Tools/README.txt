@@ -30,6 +30,6 @@
 Two scripts are located here: compare and pyramid. See provided examples to get
 an idea what they do. To generate necessary images, use debugimg command line
 arguments and optionally tweak script settings in their headers. 
-The scripts expects png images. If you have HDR Image Tools (https://bitbucket.org/edgarv/hdritools)
-installed on your computer, you can use the provided topng.bat to convert exr
-images to png.
+The scripts expect png images. If you have PCG HDR Image Tools 
+(http://bitbucket.org/edgarv/hdritools) installed on your computer, you can use
+the provided topng.bat to convert exr images to png.

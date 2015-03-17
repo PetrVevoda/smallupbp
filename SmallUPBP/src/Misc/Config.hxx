@@ -127,7 +127,7 @@ struct Config
 			"progressive photon mapping from upbp",
 			"bidirectional photon mapping from upbp",
 			"volumetric vertex connection and merging from upbp",
-			"custom selection of techniques from upbp (tech=bpt|surf|pp3d|pb2d|bb1d, upbp_<tech>[+<tech>]* means just the techniques, upbp+<tech>[+<tech>]* means combination with upbp)",
+			"custom selection of techniques from upbp (tech=bpt|surf|pp3d|pb2d|bb1d)",
 			"all available techniques of upbp"
         };
 
@@ -150,7 +150,7 @@ struct Config
     static const char* GetAcronym(Algorithm aAlgorithm)
     {
         static const char* algorithmNames[kAlgorithmMax] = {
-			"el", "ppm", "bpm", "bpt", "vcm", "pt", "vptd", "vpts", "vptls", "vptmis", "lt", "vlt", "pb2d", "bb1d", "vbpt_lt", "vbpt_ptd", "vbpt_ptls", "vbpt_ptmis", "vbpt", "upbp_lt", "upbp_ptd", "upbp_ptls", "upbp_ptmis", "upbp_bpt", "upbp_ppm", "upbp_bpm", "upbp_vcm", "upbp_|+<tech>[+<tech>]*", "upbp_all" };
+			"el", "ppm", "bpm", "bpt", "vcm", "pt", "vptd", "vpts", "vptls", "vptmis", "lt", "vlt", "pb2d", "bb1d", "vbpt_lt", "vbpt_ptd", "vbpt_ptls", "vbpt_ptmis", "vbpt", "upbp_lt", "upbp_ptd", "upbp_ptls", "upbp_ptmis", "upbp_bpt", "upbp_ppm", "upbp_bpm", "upbp_vcm", "upbp_<tech>[+<tech>]*", "upbp_all" };
 
         if(aAlgorithm < 0 || aAlgorithm >= kAlgorithmMax)
             return "unknown";
@@ -791,13 +791,13 @@ std::vector<SC> initSceneConfigs()
 	config.AddElement(SC::Element(SC::Geometry::kSmallSphereBottomLeft, SC::Materials::kGlass, SC::Media::kWhiteIsoScattering));
 	config.AddElement(SC::Element(SC::Geometry::kSmallSphereBottomRight, SC::Materials::kGlass, SC::Media::kWaterMedium));
 	config.AddElement(SC::Element(SC::Geometry::kSmallSphereTop, SC::Materials::kGlass, SC::Media::kRedAbsorbing));
-	
+	configs.push_back(config);
+
 	// 29
 	config.Reset("isooveriwr", "three overlapping spheres (iso, water, red absorb) + weak isoscattering + big area light", SC::Lights::kLightCeilingAreaBig, SC::Media::kWeakWhiteIsoScattering);
 	config.AddElement(SC::Element(SC::Geometry::kSmallSphereBottomLeft, SC::Media::kWhiteIsoScattering));
 	config.AddElement(SC::Element(SC::Geometry::kSmallSphereBottomRight, SC::Media::kWaterMedium));
 	config.AddElement(SC::Element(SC::Geometry::kSmallSphereTop, SC::Media::kRedAbsorbing));
-	configs.push_back(config);
 	configs.push_back(config);
 
 	// 30
@@ -810,68 +810,57 @@ std::vector<SC> initSceneConfigs()
 	configs.push_back(config);
 
 	// 31
-	config.Reset("6over", "six overlapping spheres + sun light", SC::Lights::kLightSun, SC::Media::kClear);
-	config.AddAllElements(cornellBoxWithWhiteBackWall);
-	config.AddElement(SC::Element(SC::Geometry::kSmallSphereLeft, SC::Materials::kDiffuseRed));
-	config.AddElement(SC::Element(SC::Geometry::kSmallSphereRight, SC::Materials::kWaterMaterial, SC::Media::kWaterMedium));
-	config.AddElement(SC::Element(SC::Geometry::kSmallSphereBottomLeft, SC::Materials::kGlossyWhite));
-	config.AddElement(SC::Element(SC::Geometry::kSmallSphereBottomRight, SC::Materials::kGlass, SC::Media::kBlueAbsorbingAndEmitting));
-	config.AddElement(SC::Element(SC::Geometry::kSmallSphereTop, SC::Materials::kIce, SC::Media::kNoMedium));
-	config.AddElement(SC::Element(SC::Geometry::kVeryLargeSphere, SC::Materials::kIce, SC::Media::kClear));
-	configs.push_back(config);
-
-	// 32
 	config.Reset("backg", "only background light and global medium", SC::Lights::kLightBackground, SC::Media::kLightReddishMedium);
 	configs.push_back(config);
 	
-	// 33
+	// 32
 	config.Reset("backas", "only background light and absorbing sphere", SC::Lights::kLightBackground, SC::Media::kClear);
 	config.AddElement(SC::Element(SC::Geometry::kVeryLargeSphere, SC::Media::kRedAbsorbing));
 	configs.push_back(config);
 
-	// 34
+	// 33
 	config.Reset("backss", "only background light and scattering sphere", SC::Lights::kLightBackground, SC::Media::kClear);
 	config.AddElement(SC::Element(SC::Geometry::kVeryLargeSphere, SC::Media::kWhiteIsoScattering));
 	configs.push_back(config);
 
-	// 35
+	// 34
 	config.Reset("bigss", "only big area light and scattering sphere", SC::Lights::kLightCeilingAreaBig, SC::Media::kClear);
 	config.AddElement(SC::Element(SC::Geometry::kVeryLargeSphere, SC::Media::kWhiteIsoScattering));
 	configs.push_back(config);
 
-	// 36
-	config.Reset("smallss", "only small area light and scattering sphere", SC::Lights::kLightCeilingAreaSmallDistant, SC::Media::kClear);
+	// 35
+	config.Reset("smallsb", "only small area light and scattering box", SC::Lights::kLightCeilingAreaSmallDistant, SC::Media::kClear);
 	config.AddElement(SC::Element(SC::Geometry::kVeryLargeBox, SC::Media::kWeakYellowIsoScattering));
 	configs.push_back(config);
 
-	// 37
+	// 36
 	config.Reset("ssssuninfisov", "specular small spheres + weak anisoscattering + sun", SC::Lights::kLightSun, SC::Media::kWeakWhiteIsoScattering);
 	config.AddAllElements(cornellBoxWithGlossyFloor);
 	config.AddElement(SC::Element(SC::Geometry::kSmallSphereLeft, SC::Materials::kMirror));
 	config.AddElement(SC::Element(SC::Geometry::kSmallSphereRight, SC::Materials::kGlass));
 	configs.push_back(config);
 
-	// 38
+	// 37
 	config.Reset("ssspointinfisov", "specular small spheres + weak anisoscattering + point light", SC::Lights::kLightCeilingPoint, SC::Media::kWeakWhiteIsoScattering);
 	config.AddAllElements(cornellBoxWithGlossyFloor);
 	config.AddElement(SC::Element(SC::Geometry::kSmallSphereLeft, SC::Materials::kMirror));
 	config.AddElement(SC::Element(SC::Geometry::kSmallSphereRight, SC::Materials::kGlass));
 	configs.push_back(config);
 
-	// 39
+	// 38
 	config.Reset("sssbackinfisov", "specular small spheres + weak anisoscattering + background light", SC::Lights::kLightBackground, SC::Media::kWeakWhiteIsoScattering);
 	config.AddAllElements(cornellBoxWithGlossyFloor);
 	config.AddElement(SC::Element(SC::Geometry::kSmallSphereLeft, SC::Materials::kMirror));
 	config.AddElement(SC::Element(SC::Geometry::kSmallSphereRight, SC::Materials::kGlass));
 	configs.push_back(config);
 
-	// 40
+	// 39
 	config.Reset("glasssphbck", "large glass medium sphere + background light", SC::Lights::kLightBackground, SC::Media::kClear);
 	config.AddAllElements(cornellBoxWithGlossyFloor);
 	config.AddElement(SC::Element(SC::Geometry::kLargeSphereMiddle, SC::Materials::kGlass, SC::Media::kAbsorbingAnisoScattering));
 	configs.push_back(config);
 
-	// 41
+	// 40
 	config.Reset("glasssphbck", "large glass medium sphere + large area light", SC::Lights::kLightCeilingAreaBig, SC::Media::kClear);
 	config.AddAllElements(cornellBoxWithGlossyFloor);
 	config.AddElement(SC::Element(SC::Geometry::kLargeSphereMiddle, SC::Materials::kGlass, SC::Media::kAbsorbingAnisoScattering));
@@ -1091,7 +1080,7 @@ void PrintHelp(const char *argv[])
 	printf("\n    Note: Time (-t) takes precedence over iterations (-i) if both are defined.\n"); 
 
 	printf("\n    Performance options:\n\n");
-	printf("    -th <threads>                     Number of threads (default 0 means #threads = #cores-1).\n");
+	printf("    -th <threads>                     Number of threads (default 0 means #threads = #cores).\n");
 	printf("    -maxMemPerThread <memory>         Sets max memory in MB for light vertex array per each thread (default 500). Works only for upbp algorithms.\n");
 
 	printf("\n    Radius options:\n\n");
@@ -1137,8 +1126,8 @@ void PrintHelp(const char *argv[])
 	printf("    -continuous_output <iter_count>  Sets whether we should continuously output images (<iter_count> > 0 says output image once per <iter_count> iterations, 0(default) no cont. output).\n");
 	printf("    -em <filepath>                   Sets environment map in scenes with background light (expects absolute path to OpenEXR file with latitude-longitude mapping).\n");
 	printf("    -min_dist2med <distance>         Sets minimum distance from camera for medium contribution (positive=absolute, negative=relative to scene size, zero=no effect (default)). Works only for upbp algorithms.\n");	
-	printf("    -rpcpi <path_count>              Reference light path count per iteration (default -1, if positive, absolute, if negative, relative to total number of pixels).\n");
-	printf("    -pcpi <path_count>               Light path count per iteration (default -1, if positive, absolute, if negative, relative to total number of traced light paths). Works only for upbp algorithms.\n");
+	printf("    -rpcpi <path_count>              Reference light path count per iteration (default -1, if positive, absolute, if negative, relative to total number of pixels). Works only for vlt, pb2d, bb1d and upbp algorithms.\n");
+	printf("    -pcpi <path_count>               Light path count per iteration (default -1, if positive, absolute, if negative, relative to total number of traced light paths). Works only for vlt, pb2d, bb1d and upbp algorithms.\n");
 	printf("    -sn <option>                     Whether to use shading normals: 0 = does not use shading normals, 1 = uses shading normals (default).\n");
 	printf("    -time                            If present algorithm run duration is appended to the name of the output file.\n");	
 }
@@ -1174,7 +1163,6 @@ void PrintShortHelp(const char *argv[])
     printf("    -i  Number of iterations to run the algorithm (default 1).\n");
     printf("    -o  User specified output name, with extension .bmp or .exr (default .exr). The name can be prefixed with relative or absolute path but the path must exists.\n");	
 	printf("\n    Note: Time (-t) takes precedence over iterations (-i) if both are defined.\n"); 
-	printf("          If both r_alpha and r_alpha_<tech> are specified, r_alpha_<tech> takes precedence (but for techniques other than <tech> parameter r_alpha applies). \n");
 	printf("\n    For more options, please see full help (-hf)\n");
 }
 
@@ -1466,7 +1454,7 @@ void ParseCommandline(int argc, const char *argv[], Config &oConfig)
 			std::istringstream iss(argv[i]);
 			iss >> oConfig.mMaxMemoryPerThread;
 			oConfig.mMaxMemoryPerThread *= 1024 * 1024;
-			if (iss.fail()) ReportParsingError("invalid argument of -maxMemPerThread option, please see help (-hf)");
+			if (iss.fail() || oConfig.mMaxMemoryPerThread <= 0) ReportParsingError("invalid argument of -maxMemPerThread option, please see help (-hf)");
 		}
 
 		// Radius options:
@@ -1946,7 +1934,7 @@ void ParseCommandline(int argc, const char *argv[], Config &oConfig)
 	if (oConfig.mEnvMapFilePath.length() > 0 && scene->mBackground)
 	{
 		delete(scene->mBackground->mEnvMap);
-		scene->mBackground->mEnvMap = new EnvMap(oConfig.mEnvMapFilePath,0,1);
+		scene->mBackground->mEnvMap = new EnvMap(oConfig.mEnvMapFilePath, 0.0f, 1);
 	}
 
     oConfig.mScene = scene;

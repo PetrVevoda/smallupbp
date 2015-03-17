@@ -177,8 +177,9 @@ public:
 		{
 			Rgb result(0);
 			
-			if(oDirectPdfW)  *oDirectPdfW = 0;
-			if(oReversePdfW) *oReversePdfW = 0;
+			if (oDirectPdfW)  *oDirectPdfW = 0;
+			if (oReversePdfW) *oReversePdfW = 0;
+			if (oSinTheta)    *oSinTheta = 0;
 
 			const Dir localDirGen = mFrame().ToLocal(aWorldDirGen);
 			
@@ -311,6 +312,8 @@ public:
 
 			if(oSampledEvent)
 				*oSampledEvent = sampledEvent;
+			if (oSinTheta) 
+				*oSinTheta = 0;
 
 			oPdfW = 0;
 			Rgb result(0);

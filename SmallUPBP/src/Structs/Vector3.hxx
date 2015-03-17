@@ -357,7 +357,7 @@ public:
 
     INLINE float square() const {
         const float ret = dot(*this, *this);
-        UPBP_ASSERT(Float::isReal(ret));
+        //UPBP_ASSERT(Float::isReal(ret));
         return ret;
     }
 

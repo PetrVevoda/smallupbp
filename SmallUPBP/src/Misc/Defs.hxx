@@ -38,6 +38,13 @@
 #include <limits>
 #include <iostream>
 
+#ifdef INFINITY
+	#undef INFINITY
+#endif
+
+#ifdef NAN
+	#undef NAN
+#endif
 
 //////////////////////////////////////////////////////////////////////////
 // Typedefs

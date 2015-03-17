@@ -225,15 +225,15 @@ struct PhotonBeam
 	 * @param	maxDistSqr		 	The maximum distance squared.
 	 * @param [in,out]	oDistance	The distance between the two lines.
 	 * @param [in,out]	oSinTheta	The sine of the angle between the two lines.
-	 * @param [in,out]	oT1		 	The ray parameter of the closes point along the query ray.
-	 * @param [in,out]	oT2		 	The ray parameter of the closes point along the photon beam segment.
+	 * @param [in,out]	oT1		 	The ray parameter of the closest point along the query ray.
+	 * @param [in,out]	oT2		 	The ray parameter of the closest point along the photon beam segment.
 	 *
 	 * @return	true is an intersection is found, false otherwise. If an intersection is found, the
 	 * 			following output parameters are set: 
 	 * 			oDistance ... distance between the two lines
 	 * 			oSinTheta ... sine of the angle between the two lines 
-	 * 			oT1 ......... ray parameter of the closes point along the query ray 
-	 * 			oT2 ......... ray parameter of the closes point along the photon beam segment.
+	 * 			oT1 ......... ray parameter of the closest point along the query ray 
+	 * 			oT2 ......... ray parameter of the closest point along the photon beam segment.
 	 */
 	static __forceinline bool testIntersectionBeamBeam(
 		const Pos& O1,
@@ -338,10 +338,10 @@ struct PhotonBeam
 				attenuation = hmedium->EvalAttenuation(queryIsectDist - mint);
 				const Rgb beamAtt = hmedium->EvalAttenuation(beamIsectDist);
 				if (rayFlags & SHORT_BEAM)
-					attenuation /= attenuation[hmedium->mMinPositiveAttenuationCoefCoordIndex()];
+					attenuation /= attenuation[hmedium->mMinPositiveAttenuationCoefCompIndex()];
 				attenuation *= beamAtt;
 				if (mFlags & SHORT_BEAM)
-					attenuation /= beamAtt[hmedium->mMinPositiveAttenuationCoefCoordIndex()];
+					attenuation /= beamAtt[hmedium->mMinPositiveAttenuationCoefCompIndex()];
 			}
 			else
 			{
@@ -426,21 +426,21 @@ struct PhotonBeam
 				scattering = hmedium->GetScatteringCoef();							
 				// Query
 				attenuation = hmedium->EvalAttenuation(queryIsectDist - mint);	
-				const float pfdQuery = attenuation[hmedium->mMinPositiveAttenuationCoefCoordIndex()];
+				const float pfdQuery = attenuation[hmedium->mMinPositiveAttenuationCoefCompIndex()];
 				if (rayFlags & SHORT_BEAM)
 					attenuation /= pfdQuery;				
-				raySamplePdfQuery = hmedium->mMinPositiveAttenuationCoefCoord() * pfdQuery;
+				raySamplePdfQuery = hmedium->mMinPositiveAttenuationCoefComp() * pfdQuery;
 				raySampleRevPdfQuery = (additionalDataForMis->mRaySamplingFlags & AbstractMedium::kOriginInMedium) ? raySamplePdfQuery : pfdQuery;
-				raySamplePdfsRatioQuery = 1.0f / hmedium->mMinPositiveAttenuationCoefCoord();
+				raySamplePdfsRatioQuery = 1.0f / hmedium->mMinPositiveAttenuationCoefComp();
 				// Beam
 				const Rgb beamAtt = hmedium->EvalAttenuation(beamIsectDist);
 				attenuation *= beamAtt;
-				const float pfdBeam = beamAtt[hmedium->mMinPositiveAttenuationCoefCoordIndex()];
+				const float pfdBeam = beamAtt[hmedium->mMinPositiveAttenuationCoefCompIndex()];
 				if (mFlags & SHORT_BEAM)
 					attenuation /= pfdBeam;
-				raySamplePdfBeam = hmedium->mMinPositiveAttenuationCoefCoord() * pfdBeam;
+				raySamplePdfBeam = hmedium->mMinPositiveAttenuationCoefComp() * pfdBeam;
 				raySampleRevPdfBeam = (mRaySamplingFlags & AbstractMedium::kOriginInMedium) ? raySamplePdfBeam : pfdBeam;
-				raySamplePdfsRatioBeam = 1.0f / hmedium->mMinPositiveAttenuationCoefCoord();
+				raySamplePdfsRatioBeam = 1.0f / hmedium->mMinPositiveAttenuationCoefComp();
 			}
 			else
 			{
@@ -580,7 +580,7 @@ struct PhotonBeam
 				0, 
 				0, 
 				0, 
-				bsdfDirPdfW * raySampleRevPdfBeam * std::abs(mLightVertex->mMisData.mCosThetaOut) / distSqBeam, 
+				(mLightVertex->mMisData.mIsOnLightSource && mLightVertex->mMisData.mIsDelta) ? 0 : bsdfDirPdfW * raySampleRevPdfBeam * std::abs(mLightVertex->mMisData.mCosThetaOut) / distSqBeam, 
 				BB1D, 
 				additionalDataForMis->mQueryBeamType, 
 				additionalDataForMis->mPhotonBeamType, 

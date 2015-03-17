@@ -28,7 +28,7 @@
 #define __PHASEFUNTION_HXX__
 
 #include "Frame.hxx"
-#include "..\Scene\Medium.hxx"
+#include "..\Scene\Media.hxx"
 
 class PhaseFunction
 {
@@ -62,7 +62,7 @@ public:
 		{
 			if (oSinTheta)
 			{
-				const float cosTheta = dot(aWorldDirFix, aWorldDirGen);
+				const float cosTheta = -dot(aWorldDirGen, aWorldDirFix);
 				*oSinTheta = sqrtf(std::max(0.f, 1.f - cosTheta * cosTheta));
 			}
 			return UniformSpherePdfW();
@@ -109,7 +109,7 @@ public:
 			oWorldDirGen = SampleUniformSphereW(Vec2f(aRndTriplet.x(), aRndTriplet.y()), &oPdfW);
 			if (oSinTheta)
 			{
-				const float cosTheta = dot(aWorldDirFix, oWorldDirGen);
+				const float cosTheta = -dot(oWorldDirGen, aWorldDirFix);
 				*oSinTheta = sqrtf(std::max(0.f, 1.f - cosTheta * cosTheta));
 			}
 		}

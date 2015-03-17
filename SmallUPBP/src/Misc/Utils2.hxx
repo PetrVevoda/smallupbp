@@ -30,6 +30,7 @@
 #include <vector>
 #include <cmath>
 #include <cstdint>
+#include <algorithm>
 
 #include "..\Structs\Rgb.hxx"
 

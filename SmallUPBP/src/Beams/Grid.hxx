@@ -36,7 +36,7 @@
 /**
  * @brief	A grid for storing photon beams.
  * 			
- * 			Regular grid with cube sized cells. Its resolution in dimension of a maximum extent
+ * 			Regular grid with cube shaped cells. Its resolution in dimension of a maximum extent
  * 			of AABB of stored beams is set in \c Config.hxx. This gives size of the cells.
  * 			Resolution in other dimensions is then set to cover the AABB. A pointer to a beam is
  * 			stored in each cell the beam intersects.
