@@ -28,13 +28,13 @@ Here we present its slightly modified version with minor fixes and improvements.
 ## Contents
 
 The archive you have downloaded contains following folders and files:
-- embree-2.0 - source code of Embree
-- OpenEXR - header files and source code of OpenEXR
-- scenes - scene and batch files used to render images in the UPBP paper
-- SmallUPBP - source code of this renderer
-- Tools - a few scripts for displaying and comparing rendered images
-- LICENSE.txt - license of our code
-- README.md - this text
+- `embree-2.0` - source code of Embree
+- `OpenEXR` - header files and source code of OpenEXR
+- `scenes` - scene and batch files used to render images in the UPBP paper
+- `SmallUPBP` - source code of this renderer
+- `Tools` - a few scripts for displaying and comparing rendered images
+- `LICENSE.txt` - license of our code
+- `README.md` - this text
 
 ## Compilation and run
 
