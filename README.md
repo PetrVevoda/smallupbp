@@ -2,7 +2,7 @@
 
 SmallUPBP is a (not too) small physically based renderer that implements the unified points, beams and paths algorithm described in the paper
 
-> Křivánek et al. [Unifying points, beams, and paths in volumetric light transport simulation](https://cgg.mff.cuni.cz/%7Ejaroslav/papers/2014-upbp/index.htm) ACM Transactions on Graphics (Proceedings of SIGGRAPH 2014), 33(4), 2014
+> Křivánek et al. [Unifying points, beams, and paths in volumetric light transport simulation.](https://cgg.mff.cuni.cz/%7Ejaroslav/papers/2014-upbp/index.htm) ACM Transactions on Graphics (Proceedings of SIGGRAPH 2014), 33(4), 2014.
 
 as well as a number of other algorithms, notably including progressive photon mapping, (progressive) bidirectional photon mapping, bidirectional path tracing, vertex connection and merging, beam radiance estimate, and photon beams.
 
@@ -15,13 +15,13 @@ Two third-party libraries are incorporated. Namely [Embree](http://embree.github
 SmallUPBP is released under the following license:
 - [MIT license](http://en.wikipedia.org/wiki/MIT_License) - most of the supplied code, scenes and associated files
 - [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0) - Embree
-- [modified BSD licence](http://www.openexr.com/license.html) - OpenEXR
+- [modified BSD licence](https://openexr.com/en/latest/license.html) - OpenEXR
 
 This code was used to render the images in the aforementioned paper and all scenes and batch files necessary for reproducing the presented results are provided (see the `scenes` folder). It is released for educational and research purposes and neither the code nor its documentation claims to be complete and bug-free. We apologize for any errors and confusion.
 
 Thorough description of the renderer, including its usage and implementation details as well as its theoretical background, is given by Petr Vévoda in his thesis 
 
-> Vévoda. [Robust light transport simulation in participating media](https://cgg.mff.cuni.cz/wp-content/uploads/2024/06/vevoda-master_thesis.pdf) Master's thesis. Charles University in Prague, Prague, Czech Republic, February 2015.
+> Vévoda. [Robust light transport simulation in participating media.](https://cgg.mff.cuni.cz/wp-content/uploads/2024/06/vevoda-master_thesis.pdf) Master's thesis. Charles University in Prague, Prague, Czech Republic, February 2015.
  
 Here we present its slightly modified version with minor fixes and improvements. Note that the thesis originally refers to a DVD. Content of the DVD is almost the same as of the archive you have downloaded.
 
